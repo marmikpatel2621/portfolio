@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marmik Patel | Data Engineer & Solution Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #1f2937;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1f2937;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1f2937;
+      z-index: 1000;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+    nav a {
+      color: #9ca3af;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover, nav a.active {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    .project, .experience-block {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin-bottom: 1.5rem;
+    }
+    .project h3, .experience-block h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.4rem; }
+    .skills span {
+      display: inline-block;
+      background: #e5e7eb;
+      color: #374151;
+      margin: 0.3rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+    .skills span:hover { background: #d1d5db; }
+    .download a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #2563eb;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .download a:hover { background: #1d4ed8; }
+    footer {
+      background: #1f2937;
+      color: #9ca3af;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="profile1.jpg" alt="Marmik Patel">
+    <h1>Marmik Patel</h1>
+    <p>Senior Data Engineer & Solution Architect</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m a results-driven Senior Data Engineer & Solution Architect with 8+ years of experience delivering scalable, high-performance data platforms for Fortune 500 enterprises across industries like telecom, life sciences, and finance.</p>
+      <ul>
+        <li>📦 Architected data platforms ingesting 1.8B+ records/hour with Spark and Snowflake</li>
+        <li>⚙️ Delivered 700+ production-grade ETL jobs/hour with sub-5-min SLAs</li>
+        <li>📉 Led migration initiatives cutting query latency by 80% and infrastructure cost by 30%</li>
+        <li>💬 Cross-functional leader skilled in mentoring engineers and collaborating with product stakeholders</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="experience-block">
+        <h3>Squadron Data Inc., Overland Park, KS — Senior Solution Architect</h3>
+        <p><strong>Jan 2024 – Present</strong></p>
+        <ul>
+          <li>Architected Snowpark migration factory (1 TB/hr, 700 ETL jobs/hr), slashing query latency from minutes to seconds.</li>
+          <li>Built an automated “Data Engineering Toolkit” that reduces platform‑migration effort by 30 %</li>
+          <li>Mentor and code‑review lead for a five‑engineer team; introduced CI/CD pipelines that trim release cycles by 40 %</li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <h3>Squadron Data Inc., Overland Park, KS — Big Data Hadoop Developer</h3>
+        <p><strong>Jan 2018 – Dec 2023</strong></p>
+        <ul>
+          <li>Designed the Hive Query Stats Spark application (Scala) to surface YARN metrics, saving clients >$200K/yr</li>
+          <li>Created the Squadron Platform Migration Tool, automating Teradata/Netezza‑to‑Hadoop/Snowflake migrations</li>
+          <li>Led HDP → CDP upgrades for 7 enterprise clusters (150K+ tables) with Kerberos, TLS, and Ranger integration</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Snowflake Migration Factory & Real-Time Analytics Enablement</h3>
+        <ul>
+          <li>Migrated 600+ databases and 3500+ tables using Snowpark and automated schema transformation logic</li>
+          <li>Implemented Snowflake Tasks & Streams for near real-time processing with Snowpipe and stored procs</li>
+          <li>Supported 700+ ETL jobs/hour with dependency scheduling across 40+ consumer teams</li>
+          <li><strong>Impact:</strong> 3x faster pipeline execution and 99.8% SLA compliance</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Spark 2 to Spark 3 Upgrade & Cluster Optimization</h3>
+        <ul>
+          <li>Refactored legacy Spark 2 pipelines to leverage Spark 3’s adaptive query execution (AQE)</li>
+          <li>Introduced bucketing and predicate pushdown to optimize read/write operations in Hive tables</li>
+          <li>Reduced small file count by 80% and cut job runtimes by 1.5–2×</li>
+          <li><strong>Impact:</strong> 20% reduction in EMR cluster spend</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Enterprise Hadoop Modernization (HDP → CDP)</h3>
+        <ul>
+          <li>Migration planning and execution across 2000+ nodes and 150K+ Hive tables</li>
+          <li>Built upgrade runbooks, validation scripts, and Hive2 to Hive3 conversion templates</li>
+          <li>Enabled ACID support and implemented Ranger, Kerberos, TLS</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Telecom ETL Optimization & Small File Reduction</h3>
+        <ul>
+          <li>Restructured Spark modules for better resource usage and checkpointing</li>
+          <li>Redesigned Hive partition logic and file format strategy for Tez compatibility</li>
+          <li><strong>Impact:</strong> 10x ingest throughput and Hive query latency drop from 6 to <1 min</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Teradata to Hadoop Migration Framework</h3>
+        <ul>
+          <li>Developed Spark-based query parser to analyze Teradata logs and auto-generate HDFS layout</li>
+          <li>Built a Sqoop ingestion engine supporting parallel export of 600+ databases and 3500+ tables</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills">
+        <span>Hadoop</span><span>Spark 2/3</span><span>Snowflake</span><span>Hive</span><span>Kafka</span><span>Livy</span>
+        <span>Snowpark</span><span>AWS</span><span>Azure</span><span>Docker</span><span>Python</span><span>Scala</span>
+        <span>Java</span><span>SQL</span><span>Bash</span><span>Airflow</span><span>Oozie</span><span>DataStage</span>
+        <span>Power BI</span><span>Tableau</span><span>Maven</span><span>SBT</span><span>Git</span><span>CI/CD</span>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2>Resume & Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:marmikpatel262@gmail.com">marmikpatel262@gmail.com</a></p>
+      <p><strong>Location:</strong> Spring Hill, KS</p>
+      <p><strong>Certification:</strong> SnowPro Core Certified (Snowflake)</p>
+      <div class="download">
+        <a href="Marmik_Patel_Resume.pdf" download>📄 Download Resume (PDF)</a>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>&copy; 2025 Marmik Patel</p>
+  </footer>
+</body>
+</html>
