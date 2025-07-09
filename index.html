@@ -1,242 +1,231 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KK Electrical Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marmik Patel | Data Engineer & Solution Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #1e1e1e;
-      --accent-color: #ffb100;
-      --text-light: #f9f9f9;
-      --background: #ffffff;
-      --section-background: #f5f5f5;
-    }
-
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--background);
-      color: var(--primary-color);
+      background: #f9fafb;
+      color: #1f2937;
+      scroll-behavior: smooth;
     }
-
     header {
-      position: relative;
-      text-align: center;
-      color: var(--text-light);
-    }
-
-    header img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-
-    header .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
-      text-align: center;
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-    }
-
-    header .logo {
-      font-size: 3rem;
-      font-weight: 800;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.5em 1em;
-      border-radius: 10px;
-      letter-spacing: 2px;
+      background: #1f2937;
       color: #fff;
-    }
-
-    header .tagline {
-      font-size: 1.5rem;
-      color: var(--accent-color);
-      margin-top: 1em;
-      font-weight: 600;
-    }
-
-    header p, header a {
-      color: #eee;
-      margin: 0.4em;
-      font-size: 1rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #1e1e1e;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #f9f9f9;
-      padding: 1em;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 2em;
-      background: var(--background);
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--accent-color);
-      margin-bottom: 0.5em;
-    }
-
-    .section {
-      margin-bottom: 2.5em;
-      display: none;
-      background: var(--section-background);
-      padding: 1.5em;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .active {
-      display: block !important;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 0.75em;
-    }
-
-    .contact {
-      background: #fff7e6;
-      border-left: 6px solid var(--accent-color);
-    }
-
-    footer {
-      background: #1e1e1e;
-      color: #ccc;
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 1.5em 1em;
-      font-size: 0.95rem;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1f2937;
+      z-index: 1000;
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+    nav a {
+      color: #9ca3af;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover, nav a.active {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    .project, .experience-block {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin-bottom: 1.5rem;
+    }
+    .project h3, .experience-block h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+    }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.4rem; }
+    .skills span {
+      display: inline-block;
+      background: #e5e7eb;
+      color: #374151;
+      margin: 0.3rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+    .skills span:hover { background: #d1d5db; }
+    .download a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #2563eb;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .download a:hover { background: #1d4ed8; }
+    footer {
+      background: #1f2937;
+      color: #9ca3af;
+      text-align: center;
+      padding: 1rem;
     }
   </style>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('.section');
-      const showSection = (id) => {
-        sections.forEach(sec => sec.classList.remove('active'));
-        const target = document.getElementById(id);
-        if (target) target.classList.add('active');
-      };
-
-      document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          const id = link.getAttribute('href').substring(1);
-          showSection(id);
-          history.pushState(null, '', '#' + id);
-          e.preventDefault();
-        });
-      });
-
-      const hash = window.location.hash.substring(1);
-      if (hash) showSection(hash);
-      else showSection('vision');
-    });
-  </script>
 </head>
 <body>
   <header>
-    <img src="header2.jpg" alt="Electrical Services Header Image">
-    <div class="overlay">
-      <div class="logo">K K ELECTRICAL SERVICES</div>
-      <div class="tagline">Powering the Future with Innovation and Reliability</div>
-    </div>
+    <img src="profile1.jpg" alt="Marmik Patel">
+    <h1>Marmik Patel</h1>
+    <p>Senior Data Engineer & Solution Architect</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#vision">Vision & Goals</a>
-    <a href="#services">Services</a>
-    <a href="#manufacturing">Manufacturing & Supply</a>
-    <a href="#sisters">Sister Companies</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
-  <main>
-    <section id="vision" class="section">
-      <h2>Vision & Goals</h2>
-      <p>KK Electrical Services aims to lead the electrical industry through unmatched service quality, timely project execution, and unwavering integrity. Our long-term vision is to set new benchmarks in electrical contracting, panel manufacturing, and sustainable energy practices.</p>
-      <p>We strive to build lasting partnerships by consistently exceeding client expectations and delivering innovative solutions aligned with modern technological advancements.</p>
-    </section>
-
-    <section id="services" class="section">
-      <h2>Services</h2>
+  <div class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m a results-driven Senior Data Engineer & Solution Architect with 8+ years of experience delivering scalable, high-performance data platforms for Fortune 500 enterprises across industries like telecom, life sciences, and finance.</p>
       <ul>
-        <li>HT and LT Overhead Line Erection</li>
-        <li>Underground Cable Works and Department Approvals</li>
-        <li>Switchyard Erection and DG Set Installations</li>
-        <li>LT/HT Heavy Duty Cable Laying for Industries</li>
-        <li>Industrial Electrification and Transformer Substations</li>
-        <li>Complete Housing & Commercial Electrification</li>
-        <li>Street Lighting and High Mast Area Lighting</li>
-        <li>Electrical Consultation with UGVCL, PGVCL, DGVCL, etc.</li>
-        <li><strong>Energy Auditing:</strong> Complete Electrical Audits, Energy Saving Implementation & Monitoring, Electrical Design & Consultancy (Licensed Auditor: G-64, Gandhinagar)</li>
+        <li>📦 Architected data platforms ingesting 1.8B+ records/hour with Spark and Snowflake</li>
+        <li>⚙️ Delivered 700+ production-grade ETL jobs/hour with sub-5-min SLAs</li>
+        <li>📉 Led migration initiatives cutting query latency by 80% and infrastructure cost by 30%</li>
+        <li>💬 Cross-functional leader skilled in mentoring engineers and collaborating with product stakeholders</li>
       </ul>
     </section>
 
-    <section id="manufacturing" class="section">
-      <h2>Manufacturing & Supply</h2>
-      <p>We manufacture high-quality LT electrical panels and supply capital goods required for industrial and commercial electrification:</p>
-      <ul>
-        <li>PCC, MCC, APFC, Synchronizing, Starter, and Automation Panels</li>
-        <li>Feeder Pillars and Distribution Boards</li>
-        <li>Custom Panel Solutions per Client Specifications</li>
-        <li>Servo Control Motors and Voltage Stabilizers</li>
-        <li>All Types of Transformers: OLTC, Dry Type, Isolation, Special-Purpose</li>
-        <li>Package Substations, HT Stabilizers, and Combo Systems</li>
-        <li>Rectifiers for DC Applications</li>
-      </ul>
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="experience-block">
+        <h3>Squadron Data Inc., Overland Park, KS — Senior Solution Architect</h3>
+        <p><strong>Jan 2024 – Present</strong></p>
+        <ul>
+          <li>Architected Snowpark migration factory (1 TB/hr, 700 ETL jobs/hr), slashing query latency from minutes to seconds.</li>
+          <li>Built an automated “Data Engineering Toolkit” that reduces platform‑migration effort by 30 %</li>
+          <li>Mentor and code‑review lead for a five‑engineer team; introduced CI/CD pipelines that trim release cycles by 40 %</li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <h3>Squadron Data Inc., Overland Park, KS — Big Data Hadoop Developer</h3>
+        <p><strong>Jan 2018 – Dec 2023</strong></p>
+        <ul>
+          <li>Designed the Hive Query Stats Spark application (Scala) to surface YARN metrics, saving clients >$200K/yr</li>
+          <li>Created the Squadron Platform Migration Tool, automating Teradata/Netezza‑to‑Hadoop/Snowflake migrations</li>
+          <li>Led HDP → CDP upgrades for 7 enterprise clusters (150K+ tables) with Kerberos, TLS, and Ranger integration</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="sisters" class="section">
-      <h2>Sister Companies</h2>
-      <ul>
-        <li><strong>Hasti Switchgear:</strong> Manufacturer of MCBs, Distribution Boards, and Channel Partner for Schneider, Havells, and others</li>
-        <li><strong>Jay Enterprise:</strong> Fabrication of Cable Trays, Junction Boxes, and Bus Bar Trunking Systems</li>
-        <li><strong>Jay Copper and Alloys Pvt. Ltd.:</strong> Supplier of Copper Tubes and Alloys for HVAC, Plumbing, Solar, and Electrical Applications</li>
-        <li><strong>Jai Tel:</strong> BSNL Tower Electrical Contracting and Maintenance</li>
-        <li><strong>Electro Earth:</strong> Manufacturer of Maintenance-Free Earthing Systems (IS:1239 Compliant)</li>
-      </ul>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Snowflake Migration Factory & Real-Time Analytics Enablement</h3>
+        <ul>
+          <li>Migrated 600+ databases and 3500+ tables using Snowpark and automated schema transformation logic</li>
+          <li>Implemented Snowflake Tasks & Streams for near real-time processing with Snowpipe and stored procs</li>
+          <li>Supported 700+ ETL jobs/hour with dependency scheduling across 40+ consumer teams</li>
+          <li><strong>Impact:</strong> 3x faster pipeline execution and 99.8% SLA compliance</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Spark 2 to Spark 3 Upgrade & Cluster Optimization</h3>
+        <ul>
+          <li>Refactored legacy Spark 2 pipelines to leverage Spark 3’s adaptive query execution (AQE)</li>
+          <li>Introduced bucketing and predicate pushdown to optimize read/write operations in Hive tables</li>
+          <li>Reduced small file count by 80% and cut job runtimes by 1.5–2×</li>
+          <li><strong>Impact:</strong> 20% reduction in EMR cluster spend</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Enterprise Hadoop Modernization (HDP → CDP)</h3>
+        <ul>
+          <li>Migration planning and execution across 2000+ nodes and 150K+ Hive tables</li>
+          <li>Built upgrade runbooks, validation scripts, and Hive2 to Hive3 conversion templates</li>
+          <li>Enabled ACID support and implemented Ranger, Kerberos, TLS</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Telecom ETL Optimization & Small File Reduction</h3>
+        <ul>
+          <li>Restructured Spark modules for better resource usage and checkpointing</li>
+          <li>Redesigned Hive partition logic and file format strategy for Tez compatibility</li>
+          <li><strong>Impact:</strong> 10x ingest throughput and Hive query latency drop from 6 to <1 min</li>
+        </ul>
+      </div>
+      <div class="project">
+        <h3>Teradata to Hadoop Migration Framework</h3>
+        <ul>
+          <li>Developed Spark-based query parser to analyze Teradata logs and auto-generate HDFS layout</li>
+          <li>Built a Sqoop ingestion engine supporting parallel export of 600+ databases and 3500+ tables</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact Us</h2>
-      <p><strong>Kamleshbhai K Patel (Former G.E.B. Engineer)</strong></p>
-      <p><strong>Address:</strong> K K Corporate House, G-9,10,11, Satyamev Complex, Opp: High court, S G Highway, Ahmedabad, Gujarat</p>
-      <p><strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kamlesh1667@gmail.com" target="_blank">kamlesh1667@gmail.com</a></p>
-      <p><strong>Phone:</strong> +91-9173637345 / +91-9173248896</p>
-      <p>Feel free to contact us for consultations, project quotations, or product inquiries. We ensure a prompt and professional response to all your electrical needs.</p>
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills">
+        <span>Hadoop</span><span>Spark 2/3</span><span>Snowflake</span><span>Hive</span><span>Kafka</span><span>Livy</span>
+        <span>Snowpark</span><span>AWS</span><span>Azure</span><span>Docker</span><span>Python</span><span>Scala</span>
+        <span>Java</span><span>SQL</span><span>Bash</span><span>Airflow</span><span>Oozie</span><span>DataStage</span>
+        <span>Power BI</span><span>Tableau</span><span>Maven</span><span>SBT</span><span>Git</span><span>CI/CD</span>
+      </div>
     </section>
-  </main>
+
+    <section id="resume">
+      <h2>Resume & Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:marmikpatel262@gmail.com">marmikpatel262@gmail.com</a></p>
+      <p><strong>Location:</strong> Spring Hill, KS</p>
+      <p><strong>Certification:</strong> SnowPro Core Certified (Snowflake)</p>
+      <div class="download">
+        <a href="Marmik_Patel_Resume.pdf" download>📄 Download Resume (PDF)</a>
+      </div>
+    </section>
+  </div>
   <footer>
-    <p>&copy; 2025 KK Electrical Services. All Rights Reserved.</p>
+    <p>&copy; 2025 Marmik Patel</p>
   </footer>
 </body>
 </html>
