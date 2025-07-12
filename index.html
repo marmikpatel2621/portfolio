@@ -173,12 +173,15 @@
         </ul>
       </div>
       <div class="project">
-        <h3>Spark 2 to Spark 3 Upgrade & Cluster Optimization</h3>
+        <h3>Spark2 to Spark3 Upgrade & Cluster Optimization</h3>
         <ul>
-          <li>Refactored legacy Spark 2 pipelines to leverage Spark 3’s adaptive query execution (AQE)</li>
-          <li>Introduced bucketing and predicate pushdown to optimize read/write operations in Hive tables</li>
-          <li>Reduced small file count by 80% and cut job runtimes by 1.5–2×</li>
-          <li><strong>Impact:</strong> 20% reduction in EMR cluster spend</li>
+          <li><strong>Refactored 400+ Spark 2 jobs to Spark 3</strong>, exploiting Adaptive Query Execution (AQE), dynamic partition pruning, and skew-aware shuffle.</li>
+          <li><strong>Fine-tuned cluster configs:</strong> adjusted executor/core ratios, shuffle partitions, GC flags, and I/O buffer sizes; trimmed median job memory by 30 %.</li>
+          <li><strong>Curated dependency set</strong> (Spark, Hadoop, Hive, Scala libs) and removed shaded JAR conflicts, shrinking container start-up time by 20 %.</li>
+          <li>Implemented <strong>bucketed tables + predicate push-down</strong>, optimized broadcast vs. shuffle joins, and rewrote wide joins with Bloom filters.</li>
+          <li>Slashed small-file count 80% via compaction strategy and dynamic repartitioning; end-to-end runtime 1.5 – 2× faster on daily workload.</li>
+          <li>Authored a <strong>Spark 3 performance playbook</strong> with config templates and code patterns adopted by 6 peer teams.</li>
+          <li><strong>Impact:</strong> 20 % reduction in Yarn-cluster CPU / memory cost while sustaining tighter SLAs for downstream analytics.</li>
         </ul>
       </div>
       <div class="project">
