@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marmik Patel | Senior Data Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --clr-bg: #f3f4f6;
+      --clr-primary: #2563eb;
+      --clr-primary-dark: #1d4ed8;
+      --clr-dark: #1f2937;
+      --clr-light: #ffffff;
+      --fade-duration: 0.6s;
+    }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--clr-bg);
+      color: var(--clr-dark);
+      line-height:1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    header {
+      background: var(--clr-dark);
+      color: var(--clr-light);
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent);
+      animation: rotateBg 20s linear infinite;
+    }
+    @keyframes rotateBg { to { transform: rotate(360deg); } }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      opacity:0; transform: translateY(20px);
+      animation: fadeIn var(--fade-duration) forwards 0.3s;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity:0; transform: translateY(20px);
+      animation: fadeIn var(--fade-duration) forwards 0.5s;
+    }
+    .btn-resume {
+      display:inline-block;
+      margin-top:1.2rem;
+      padding:.6rem 1.4rem;
+      background: var(--clr-primary);
+      color: var(--clr-light);
+      border-radius:6px;
+      font-weight:600;
+      transform: translateY(20px);
+      opacity:0;
+      animation: fadeIn var(--fade-duration) forwards 0.7s;
+    }
+    .btn-resume:hover { background: var(--clr-primary-dark); }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top:0;
+      background: var(--clr-light);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index:100;
+    }
+    .nav-container {
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      justify-content:center;
+      gap:2rem;
+      padding:.75rem 1rem;
+    }
+    nav a {
+      color: var(--clr-dark);
+      font-weight:500;
+      position: relative;
+      padding-bottom:2px;
+    }
+    nav a::after {
+      content:'';
+      position:absolute; left:0; bottom:0;
+      width:100%; height:2px;
+      background:var(--clr-primary);
+      transform: scaleX(0);
+      transform-origin:right;
+      transition: transform .3s ease;
+    }
+    nav a:hover::after,
+    nav a.active::after { transform: scaleX(1); transform-origin:left; }
+
+    /* SECTIONS */
+    .container { max-width:1100px; margin:2rem auto; padding:0 1rem; }
+    section { margin-bottom:4rem; opacity:0; transform:translateY(30px); 
+              animation: fadeIn var(--fade-duration) forwards; }
+    section:nth-of-type(odd)  { animation-delay: 0.3s; }
+    section:nth-of-type(even) { animation-delay: 0.5s; }
+
+    h2 {
+      font-size:2rem;
+      margin-bottom:1rem;
+      position: relative;
+    }
+    h2::after {
+      content:'';
+      position:absolute; left:0; bottom:-6px;
+      width:60px; height:4px;
+      background:var(--clr-primary);
+    }
+
+    /* ABOUT */
+    #about ul { list-style: none; margin-top:1rem; }
+    #about li { display:flex; align-items:center; gap:.6rem; margin-bottom:.8rem; }
+
+    /* EXPERIENCE */
+    .experience-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2rem;
+    }
+    @media(min-width:700px) {
+      .experience-grid { grid-template-columns:1fr 1fr; }
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2rem;
+    }
+    @media(min-width:700px) {
+      .projects-grid { grid-template-columns:1fr 1fr; }
+    }
+    .project {
+      transition: transform .3s;
+    }
+    .project:hover { transform: translateY(-6px); }
+
+    /* SKILLS */
+    .skills { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1rem; }
+    .skills span {
+      background: var(--clr-light);
+      padding:.4rem .9rem;
+      border-radius:999px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.05);
+      transition: transform .2s, background .2s;
+    }
+    .skills span:hover {
+      transform: scale(1.05);
+      background: var(--clr-primary);
+      color: var(--clr-light);
+    }
+
+    /* EDUCATION & CERTS */
+    .edu-card {
+      display:flex;
+      flex-direction:column;
+      background: var(--clr-light);
+      padding:1.2rem;
+      border-radius:8px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom:1.5rem;
+      transition: transform .3s;
+    }
+    .edu-card:hover { transform: translateY(-4px); }
+    .edu-card h3 { margin-bottom:.4rem; }
+    .edu-card p { font-size:.9rem; color:#4b5563; }
+
+    /* RESUME */
+    .download { text-align:center; }
+    
+    /* FOOTER */
+    footer { text-align:center; padding:1.5rem; background:#e5e7eb; color:#374151; }
+
+    /* Animations */
+    @keyframes fadeIn {
+      to { opacity:1; transform:translateY(0) }
+    }
+
+    details {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+summary {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  outline: none;
+  list-style: none;
+}
+details[open] summary {
+  color: var(--clr-primary);
+}
+details ul {
+  margin-top: .5rem;
+  padding-left: 1.2rem;
+}
+
+/* Accordion content wrapper */
+details .details-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding-left: 1.2rem; /* match UL indent */
+}
+
+/* When open, expand */
+details[open] .details-content {
+  max-height: 500px; /* large enough to show all content */
+}
+
+/* Summary arrow */
+summary {
+  position: relative;
+  padding-right: 1.5rem;
+  list-style: none;
+}
+summary::after {
+  content: '▶';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+}
+details[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Optional: fade in content */
+details .details-content ul {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+}
+details[open] .details-content ul {
+  opacity: 1;
+}
+
+/* Skill bars */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+.skill-item {
+  position: relative;
+  padding-bottom: 1.2rem; /* space for bar */
+}
+.skill-item .name {
+  display: block;
+  background: #e5e7eb;
+  color: #374151;
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  text-align: center;
+  transition: background .2s, color .2s;
+}
+.skill-item .name:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.skill-item .bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.skill-item .bar .fill {
+  height: 100%;
+  background: #2563eb;
+  width: 0;
+  transition: width .6s ease;
+}
+/* when listing skills, we’ll use inline style on .fill to set width */
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Marmik Patel</h1>
+    <p>Senior Data Engineer & Solution Architect</p>
+    <a href="#resume" class="btn-resume">Download Résumé</a>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#resume">Resume</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>I’m a results-driven Senior Data Engineer & Solution Architect with 8+ years of experience delivering scalable, high-performance data platforms for Fortune 500 enterprises across telecom, life sciences, and finance.</p>
+      <ul>
+        <li>📦 Architected platforms ingesting <strong>1.8 B+ rows/hour</strong> with Spark & Snowflake</li>
+        <li>⚙️ Delivered <strong>1 500+ ETL jobs/hour</strong> with sub-5-min SLAs</li>
+        <li>📉 Led migrations cutting query latency by <strong>80 %</strong> and infra cost by <strong>30 %</strong></li>
+        <li>💬 Mentor & cross-functional collaborator on product roadmap</li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+  <h2>Work Experience</h2>
+  <div class="container">
+    <details>
+      <summary>Senior Solution Architect — Squadron Data Inc. (Jan 2024 – Present)</summary>
+      <div class="details-content">
+        <ul>
+          <li>Lead architect for cloud-scale data-platform modernizations, delivering a Snowflake + Snowpark migration factory (1 TB/hr, 700 ETL jobs/hr) and a Spark 3 upgrade that cut cluster cost 20 %.</li>
+          <li>Built out secure Azure–Snowflake foundation (Private Link, RBAC, multi-cluster warehouses) and rolled out CI/CD + monitoring that trims release times and holds 99.8 % SLA.</li>
+          <li>Mentor and code-review lead for a five-engineer team; introduced CI/CD pipelines that trim release cycles by 40 %</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Big Data Hadoop Developer — Squadron Data Inc. (Jan 2018 – Dec 2023)</summary>
+      <div class="details-content">
+        <ul>
+          <li>Designed the Hive Query Stats Spark application (Scala) to surface YARN metrics, informing capacity planning and saving clients >$200 K/yr</li>
+          <li>Created the Squadron Platform Migration Tool, automating Teradata/Netezza‑to‑Hadoop/Snowflake migrations</li>
+          <li>Led HDP → CDP in-place upgrades for seven enterprise clusters (150 K tables), implementing Kerberos, Ranger, TLS/SSL, and ACID adoption playbooks</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+  <h2>Projects</h2>
+
+  <div class="container">
+    <details>
+          <summary>Snowflake Migration Factory & Real-Time Analytics</summary>
+          <div class="details-content">
+          <ul>
+          <li>Migrated <strong>700+ databases / 4500+ tables</strong> from Hive to Snowflake with Snowpark-driven automated schema-transformation logic.</li>
+          <li>Designed Azure–Snowflake network topology: deployed Private Endpoints (PE / PEP), routed traffic through Azure Private Link and DNS forwarding rules to keep all data-in-flight off the public Internet.</li>
+          <li>Provisioned multi-cluster warehouses (XS → L) with auto-suspend / auto-resume and resource monitors; drove 20 % credit savings while meeting burst-load SLAs.</li>
+          <li>Implemented role-based access control (RBAC): created custom roles for Consumer Teams vs Platform Ops, integrated Azure AD SSO, and built user-onboarding scripts with SnowSQL + Github Actions</li>
+          <li>Configured <strong>Snowflake Tasks & Streams + Snowpipe</strong> for near-real-time ingestion; orchestrated cross-database dependencies via Airflow DAGs.</li>
+          <li>Tuned file formats & micro-partition clustering enabled the sustainment of over <strong>1500 ETL jobs/hour</strong>, while maintaining query latency below a second for more than 40 downstream teams.</li>
+          <li><strong>Impact:</strong> Pipeline execution is 3× faster, achieving 99.8% SLA compliance, and audited with zero egress to public endpoints for compliance.</li>
+        </ul>
+        </div>
+        </details>
+        <details>
+          <summary>Spark 2→3 Upgrade & Cluster Optimisation</summary>
+          <div class="details-content">
+          <ul>
+          <li><strong>Refactored 400+ Spark 2 jobs to Spark 3</strong>, exploiting Adaptive Query Execution (AQE), dynamic partition pruning, and skew-aware shuffle.</li>
+          <li><strong>Fine-tuned cluster configs:</strong> adjusted executor/core ratios, shuffle partitions, GC flags, and I/O buffer sizes; trimmed median job memory by 30 %.</li>
+          <li><strong>Curated dependency set</strong> (Spark, Hadoop, Hive, Scala libs) and removed shaded JAR conflicts, shrinking container start-up time by 20 %.</li>
+          <li>Implemented <strong>bucketed tables + predicate push-down</strong>, optimized broadcast vs. shuffle joins, and rewrote wide joins with Bloom filters.</li>
+          <li>Slashed small-file count 80% via compaction strategy and dynamic repartitioning; end-to-end runtime 1.5 – 2× faster on daily workload.</li>
+          <li>Authored a <strong>Spark 3 performance playbook</strong> with config templates and code patterns adopted by 6 peer teams.</li>
+          <li><strong>Impact:</strong> 20% reduction in Yarn-cluster CPU / memory cost while sustaining tighter SLAs for downstream analytics.</li>
+        </ul>
+        </div>
+        </details>
+        <details>
+          <summary>Enterprise HDP→CDP Modernisation</summary>
+          <div class="details-content">
+          <ul>
+          <li><strong>Assessed 2,000-node HDP estates:</strong> profiled services, Hive metastore health (150K+ tables) and security posture to choose in-place upgrade vs. side-by-side migration per cluster.</li>
+          <li>Created <strong>“code-delta” playbooks</strong> — flagged Spark/Hive syntax breaks, Sqoop/OOZIE job tweaks, and storage-path changes—so application teams could refactor before cut-over.</li>
+          <li>Authored and co-owned a <strong>modular runbook framework</strong>; generated environment-specific runbooks and automated validation scripts for DEV → UAT → PROD waves.</li>
+          <li>Implemented Ranger policies, Kerberos, Knox gateway, TLS/SSL and enabled Hive/Spark ACID tables; handed over post-go-live hardening checklist to platform ops.</li>
+        </ul>
+        </div>
+        </details>
+        <details>
+          <summary>Telecom ETL Optimisation & Small-File Reduction</summary>
+          <div class="details-content">
+          <ul>
+          <li><strong>Audited legacy Spark & Hive codebase</strong> to surface inefficient shuffle patterns, hard-coded partitions, and file-layout anti-patterns. </li>
+          <li><strong>Redesigned Hive partition scheme + file-format strategy</strong> (multiple buckets, larger ORC stripes) for Tez; eliminated small-file explosion.</li>
+          <li><strong>Re-architected Spark ingest framework</strong> to sustain 1–2 B rows/hour with checkpointing and dynamic repartitioning.</li>
+          <li><strong>Result:</strong> 10× higher ingest throughput and Hive query latency cut from 6 min to around 1 min.</li>
+        </ul>
+        </div>
+        </details>
+          <details>
+          <summary>Teradata→Hadoop Migration Framework</summary>
+          <div class="details-content">
+          <ul>
+          <li><strong>Parsed historical Teradata query logs</strong> with Spark to profile access patterns and recommend optimal HDFS layout, clustering keys, and partition strategy.</li>
+          <li>Generated Sqoop-ready table manifests and an <strong>auto-builder that emits parallel Sqoop scripts</strong> for 600+ databases / 3,500+ tables.</li>
+          <li>Produced companion module that scaffolds <strong>Spark ETL templates</strong> (read, transform, write to Hive) for each migrated table—accelerating developer onboarding and ensuring performance best practices.</li>
+        </ul>
+        </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+  <h2>Skills &amp; Proficiency</h2>
+  <div class="skills-list">
+    <!-- Data Engineering & Big Data -->
+    <div class="skill-item">
+      <span class="name">Hadoop</span>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Spark 2/3</span>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Snowflake</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Hive</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Kafka</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Livy</span>
+      <div class="bar"><div class="fill" style="width:65%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Sqoop</span>
+      <div class="bar"><div class="fill" style="width:60%"></div></div>
+    </div>
+
+    <!-- Cloud & DevOps -->
+    <div class="skill-item">
+      <span class="name">AWS (S3, EMR)</span>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Azure</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Docker</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">CI/CD</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Git</span>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Ranger</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Knox</span>
+      <div class="bar"><div class="fill" style="width:65%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Kerberos</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">TLS/SSL</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+
+    <!-- Programming & Scripting -->
+    <div class="skill-item">
+      <span class="name">Python</span>
+      <div class="bar"><div class="fill" style="width:95%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Scala</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Java</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">SQL</span>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Bash</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+
+    <!-- Orchestration & ETL -->
+    <div class="skill-item">
+      <span class="name">Apache Airflow</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Snowflake Tasks</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Snowpipe</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Apache Oozie</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">IBM DataStage</span>
+      <div class="bar"><div class="fill" style="width:65%"></div></div>
+    </div>
+
+    <!-- Databases & Warehouses -->
+    <div class="skill-item">
+      <span class="name">Snowflake</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">PostgreSQL</span>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">MySQL</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Teradata</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+
+    <!-- Analytics & BI -->
+    <div class="skill-item">
+      <span class="name">Power BI</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Tableau</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+
+    <!-- Tools & IDEs -->
+    <div class="skill-item">
+      <span class="name">Maven</span>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">SBT</span>
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">IntelliJ IDEA</span>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">PyCharm</span>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Eclipse</span>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">Unix/Linux</span>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <span class="name">JIRA</span>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+  </div>
+</section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education &amp; Certifications</h2>
+      <div class="edu-card">
+        <h3>Master of Science in Computer Science</h3>
+        <p>University of Missouri – Kansas City | GPA 3.95 | Jan 2016 – Dec 2017</p>
+      </div>
+      <div class="edu-card">
+        <h3>Bachelor of Engineering in Computer Engineering</h3>
+        <p>Gujarat Technological University – India | GPA 3.5 | May 2011 – Jun 2015</p>
+      </div>
+      <div class="edu-card">
+        <h3>Certification</h3>
+        <p>SnowPro Core Certified (Snowflake)</p>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume">
+      <h2>Resume &amp; Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:marmikpatel262@gmail.com">marmikpatel262@gmail.com</a></p>
+      <p><strong>Location:</strong> Spring Hill, KS</p>
+      <div class="download">
+        <a href="Marmik_Patel_Resume.pdf" download>📄 Download Résumé (PDF)</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Marmik Patel &middot; All rights reserved
+  </footer>
+
+</body>
+</html>
