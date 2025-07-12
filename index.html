@@ -163,10 +163,13 @@
       <div class="project">
         <h3>Snowflake Migration Factory & Real-Time Analytics Enablement</h3>
         <ul>
-          <li>Migrated 600+ databases and 3500+ tables using Snowpark and automated schema transformation logic</li>
-          <li>Implemented Snowflake Tasks & Streams for near real-time processing with Snowpipe and stored procs</li>
-          <li>Supported 700+ ETL jobs/hour with dependency scheduling across 40+ consumer teams</li>
-          <li><strong>Impact:</strong> 3x faster pipeline execution and 99.8% SLA compliance</li>
+          <li>Migrated <strong>600+ databases / 3500+ tables</strong> from Hive to Snowflake with Snowpark-driven automated schema-transformation logic.</li>
+          <li>Designed Azure–Snowflake network topology: deployed Private Endpoints (PE / PEP), routed traffic through Azure Private Link and DNS forwarding rules to keep all data-in-flight off the public Internet.</li>
+          <li>Provisioned multi-cluster warehouses (XS → L) with auto-suspend / auto-resume and resource monitors; drove 20 % credit savings while meeting burst-load SLAs.</li>
+          <li>Implemented role-based access control (RBAC): created custom roles for Consumer Teams vs Platform Ops, integrated Azure AD SSO, and built user-onboarding scripts with SnowSQL + Github Actions</li>
+          <li>Configured <strong>Snowflake Tasks & Streams + Snowpipe</strong> for near-real-time ingestion; orchestrated cross-database dependencies via Airflow DAGs.</li>
+          <li>Tuned file formats & micro-partition clustering enabled the sustainment of over <strong>700 ETL jobs/hour</strong>, while maintaining query latency below a second for more than 40 downstream teams.</li>
+          <li><strong>Impact:</strong> Pipeline execution is 3× faster, achieving 99.8% SLA compliance, and audited with zero egress to public endpoints for compliance.</li>
         </ul>
       </div>
       <div class="project">
