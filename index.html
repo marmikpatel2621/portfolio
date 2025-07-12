@@ -130,7 +130,7 @@
       <p>I’m a results-driven Senior Data Engineer & Solution Architect with 8+ years of experience delivering scalable, high-performance data platforms for Fortune 500 enterprises across industries like telecom, life sciences, and finance.</p>
       <ul>
         <li>📦 Architected data platforms ingesting 1.8B+ records/hour with Spark and Snowflake</li>
-        <li>⚙️ Delivered 700+ production-grade ETL jobs/hour with sub-5-min SLAs</li>
+        <li>⚙️ Delivered 1500+ production-grade ETL jobs/hour with sub-5-min SLAs</li>
         <li>📉 Led migration initiatives cutting query latency by 80% and infrastructure cost by 30%</li>
         <li>💬 Cross-functional leader skilled in mentoring engineers and collaborating with product stakeholders</li>
       </ul>
@@ -163,12 +163,12 @@
       <div class="project">
         <h3>Snowflake Migration Factory & Real-Time Analytics Enablement</h3>
         <ul>
-          <li>Migrated <strong>600+ databases / 3500+ tables</strong> from Hive to Snowflake with Snowpark-driven automated schema-transformation logic.</li>
+          <li>Migrated <strong>700+ databases / 4500+ tables</strong> from Hive to Snowflake with Snowpark-driven automated schema-transformation logic.</li>
           <li>Designed Azure–Snowflake network topology: deployed Private Endpoints (PE / PEP), routed traffic through Azure Private Link and DNS forwarding rules to keep all data-in-flight off the public Internet.</li>
           <li>Provisioned multi-cluster warehouses (XS → L) with auto-suspend / auto-resume and resource monitors; drove 20 % credit savings while meeting burst-load SLAs.</li>
           <li>Implemented role-based access control (RBAC): created custom roles for Consumer Teams vs Platform Ops, integrated Azure AD SSO, and built user-onboarding scripts with SnowSQL + Github Actions</li>
           <li>Configured <strong>Snowflake Tasks & Streams + Snowpipe</strong> for near-real-time ingestion; orchestrated cross-database dependencies via Airflow DAGs.</li>
-          <li>Tuned file formats & micro-partition clustering enabled the sustainment of over <strong>700 ETL jobs/hour</strong>, while maintaining query latency below a second for more than 40 downstream teams.</li>
+          <li>Tuned file formats & micro-partition clustering enabled the sustainment of over <strong>1500 ETL jobs/hour</strong>, while maintaining query latency below a second for more than 40 downstream teams.</li>
           <li><strong>Impact:</strong> Pipeline execution is 3× faster, achieving 99.8% SLA compliance, and audited with zero egress to public endpoints for compliance.</li>
         </ul>
       </div>
@@ -187,24 +187,29 @@
       <div class="project">
         <h3>Enterprise Hadoop Modernization (HDP → CDP)</h3>
         <ul>
-          <li>Migration planning and execution across 2000+ nodes and 150K+ Hive tables</li>
-          <li>Built upgrade runbooks, validation scripts, and Hive2 to Hive3 conversion templates</li>
-          <li>Enabled ACID support and implemented Ranger, Kerberos, TLS</li>
+          <li><strong>Assessed 2,000-node HDP estates:</strong> profiled services, Hive metastore health (150K+ tables) and security posture to choose in-place upgrade vs. side-by-side migration per cluster.</li>
+          <li>Created <strong>“code-delta” playbooks</strong> — flagged Spark/Hive syntax breaks, Sqoop/OOZIE job tweaks, and storage-path changes—so application teams could refactor before cut-over.</li>
+          <li>Authored and co-owned a <strong>modular runbook framework</strong>; generated environment-specific runbooks and automated validation scripts for DEV → UAT → PROD waves.</li>
+          <li>Implemented Ranger policies, Kerberos, Knox gateway, TLS/SSL and enabled Hive/Spark ACID tables; handed over post-go-live hardening checklist to platform ops.</li>
         </ul>
       </div>
       <div class="project">
         <h3>Telecom ETL Optimization & Small File Reduction</h3>
         <ul>
-          <li>Restructured Spark modules for better resource usage and checkpointing</li>
-          <li>Redesigned Hive partition logic and file format strategy for Tez compatibility</li>
-          <li><strong>Impact:</strong> 10x ingest throughput and Hive query latency drop from 6 to <1 min</li>
+          <li><strong>Audited legacy Spark & Hive codebase</strong> to surface inefficient shuffle patterns, hard-coded partitions, and file-layout anti-patterns. </li>
+          <li><strong>Redesigned Hive partition scheme + file-format strategy</strong> (multiple buckets, larger ORC stripes) for Tez; eliminated small-file explosion.</li>
+          <li><strong>Re-architected Spark ingest framework</strong> to sustain 1–2 B rows/hour with checkpointing and dynamic repartitioning.</li>
+          <li><strong>Result:</strong> 10× higher ingest throughput and Hive query latency cut from 6 min to around 1 min.</li>
+
         </ul>
       </div>
       <div class="project">
         <h3>Teradata to Hadoop Migration Framework</h3>
         <ul>
-          <li>Developed Spark-based query parser to analyze Teradata logs and auto-generate HDFS layout</li>
-          <li>Built a Sqoop ingestion engine supporting parallel export of 600+ databases and 3500+ tables</li>
+          <li><strong>Parsed historical Teradata query logs</strong> with Spark to profile access patterns and recommend optimal HDFS layout, clustering keys, and partition strategy.</li>
+          <li>Generated Sqoop-ready table manifests and an <strong>auto-builder that emits parallel Sqoop scripts</strong> for 600+ databases / 3,500+ tables.</li>
+          <li>Produced companion module that scaffolds <strong>Spark ETL templates</strong> (read, transform, write to Hive) for each migrated table—accelerating developer onboarding and ensuring performance best practices.</li>
+
         </ul>
       </div>
     </section>
