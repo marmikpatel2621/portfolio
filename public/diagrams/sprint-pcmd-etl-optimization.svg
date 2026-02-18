@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="834pt" height="327pt" viewBox="0.00 0.00 834.00 327.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 323)">
+<ns0:title>G</ns0:title>
+<ns0:text text-anchor="middle" x="161" y="-305.4" font-family="Inter" font-size="12.00">Sprint — PCMD ETL Optimization Architecture (2019)</ns0:text>
+<ns0:g id="clust1" class="cluster">
+<ns0:title>cluster_pre</ns0:title>
+<ns0:path fill="#eff6ff" stroke="#93c5fd" d="M69.5,-8C69.5,-8 585.5,-8 585.5,-8 591.5,-8 597.5,-14 597.5,-20 597.5,-20 597.5,-123 597.5,-123 597.5,-129 591.5,-135 585.5,-135 585.5,-135 69.5,-135 69.5,-135 63.5,-135 57.5,-129 57.5,-123 57.5,-123 57.5,-20 57.5,-20 57.5,-14 63.5,-8 69.5,-8" fill-opacity="0.55" stroke-width="1.2" />
+<ns0:text text-anchor="middle" x="113.5" y="-121.4" font-family="Inter" font-size="12.00">Pre-optimization</ns0:text>
+</ns0:g>
+<ns0:g id="clust2" class="cluster">
+<ns0:title>cluster_post</ns0:title>
+<ns0:path fill="#eff6ff" stroke="#93c5fd" d="M20,-143C20,-143 806,-143 806,-143 812,-143 818,-149 818,-155 818,-155 818,-278 818,-278 818,-284 812,-290 806,-290 806,-290 20,-290 20,-290 14,-290 8,-284 8,-278 8,-278 8,-155 8,-155 8,-149 14,-143 20,-143" fill-opacity="0.55" stroke-width="1.2" />
+<ns0:text text-anchor="middle" x="90" y="-276.4" font-family="Inter" font-size="12.00">Updated ETL architecture</ns0:text>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>o1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M120.5,-106C120.5,-106 90.5,-106 90.5,-106 84.5,-106 78.5,-100 78.5,-94 78.5,-94 78.5,-82 78.5,-82 78.5,-76 84.5,-70 90.5,-70 90.5,-70 120.5,-70 120.5,-70 126.5,-70 132.5,-76 132.5,-82 132.5,-82 132.5,-94 132.5,-94 132.5,-100 126.5,-106 120.5,-106" />
+<ns0:text text-anchor="middle" x="105.5" y="-85.2" font-family="Inter" font-size="11.00" fill="#18181b">Oozie</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>s2</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M355,-79C355,-79 301,-79 301,-79 295,-79 289,-73 289,-67 289,-67 289,-55 289,-55 289,-49 295,-43 301,-43 301,-43 355,-43 355,-43 361,-43 367,-49 367,-55 367,-55 367,-67 367,-67 367,-73 361,-79 355,-79" />
+<ns0:text text-anchor="middle" x="328" y="-58.2" font-family="Inter" font-size="11.00" fill="#18181b">Spark 2 ETL</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>o1-&gt;s2</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M132.66,-84.8C169.07,-80.34 235.59,-72.19 280.55,-66.69" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="281.08,-69.44 288.68,-65.69 280.4,-63.89 281.08,-69.44" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>h2</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M577.5,-79C577.5,-79 508.5,-79 508.5,-79 502.5,-79 496.5,-73 496.5,-67 496.5,-67 496.5,-55 496.5,-55 496.5,-49 502.5,-43 508.5,-43 508.5,-43 577.5,-43 577.5,-43 583.5,-43 589.5,-49 589.5,-55 589.5,-55 589.5,-67 589.5,-67 589.5,-73 583.5,-79 577.5,-79" />
+<ns0:text text-anchor="middle" x="543" y="-58.2" font-family="Inter" font-size="11.00" fill="#18181b">Hive 2 + HDFS</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>s2-&gt;h2</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M367.08,-61C400.79,-61 450.35,-61 488.12,-61" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="488.48,-63.8 496.48,-61 488.48,-58.2 488.48,-63.8" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>ig</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M133.5,-52C133.5,-52 77.5,-52 77.5,-52 71.5,-52 65.5,-46 65.5,-40 65.5,-40 65.5,-28 65.5,-28 65.5,-22 71.5,-16 77.5,-16 77.5,-16 133.5,-16 133.5,-16 139.5,-16 145.5,-22 145.5,-28 145.5,-28 145.5,-40 145.5,-40 145.5,-46 139.5,-52 133.5,-52" />
+<ns0:text text-anchor="middle" x="105.5" y="-37.2" font-family="Inter" font-size="11.00" fill="#18181b">Ignite cache</ns0:text>
+<ns0:text text-anchor="middle" x="105.5" y="-25.2" font-family="Inter" font-size="11.00" fill="#18181b">(inefficient)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>ig-&gt;s2</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" stroke-dasharray="5,2" d="M145.67,-38.8C183.53,-43.43 240.88,-50.45 280.92,-55.36" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="280.65,-58.15 288.94,-56.34 281.34,-52.59 280.65,-58.15" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>i1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M183,-261C183,-261 28,-261 28,-261 22,-261 16,-255 16,-249 16,-249 16,-237 16,-237 16,-231 22,-225 28,-225 28,-225 183,-225 183,-225 189,-225 195,-231 195,-237 195,-237 195,-249 195,-249 195,-255 189,-261 183,-261" />
+<ns0:text text-anchor="middle" x="105.5" y="-246.2" font-family="Inter" font-size="11.00" fill="#18181b">Ingestion</ns0:text>
+<ns0:text text-anchor="middle" x="105.5" y="-234.2" font-family="Inter" font-size="11.00" fill="#18181b">spark.read with explicit schema</ns0:text>
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>p1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M413,-240C413,-240 243,-240 243,-240 237,-240 231,-234 231,-228 231,-228 231,-184 231,-184 231,-178 237,-172 243,-172 243,-172 413,-172 413,-172 419,-172 425,-178 425,-184 425,-184 425,-228 425,-228 425,-234 419,-240 413,-240" />
+<ns0:text text-anchor="middle" x="328" y="-227.2" font-family="Inter" font-size="11.00" fill="#18181b">Processing (Spark)</ns0:text>
+<ns0:text text-anchor="middle" x="328" y="-215.2" font-family="Inter" font-size="11.00" fill="#18181b">Vectorized transforms</ns0:text>
+<ns0:text text-anchor="middle" x="328" y="-203.2" font-family="Inter" font-size="11.00" fill="#18181b">Reduced/reordered joins</ns0:text>
+<ns0:text text-anchor="middle" x="328" y="-191.2" font-family="Inter" font-size="11.00" fill="#18181b">Config-driven schema &amp; partitions</ns0:text>
+<ns0:text text-anchor="middle" x="328" y="-179.2" font-family="Inter" font-size="11.00" fill="#18181b">Controlled repartitioning</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>i1-&gt;p1</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M195.23,-228.11C204.3,-226.59 213.58,-225.03 222.79,-223.49" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="223.44,-226.22 230.87,-222.13 222.52,-220.69 223.44,-226.22" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>m1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M613,-234C613,-234 473,-234 473,-234 467,-234 461,-228 461,-222 461,-222 461,-190 461,-190 461,-184 467,-178 473,-178 473,-178 613,-178 613,-178 619,-178 625,-184 625,-190 625,-190 625,-222 625,-222 625,-228 619,-234 613,-234" />
+<ns0:text text-anchor="middle" x="543" y="-221.2" font-family="Inter" font-size="11.00" fill="#18181b">Data model (Hive)</ns0:text>
+<ns0:text text-anchor="middle" x="543" y="-209.2" font-family="Inter" font-size="11.00" fill="#18181b">Day-based partitions</ns0:text>
+<ns0:text text-anchor="middle" x="543" y="-197.2" font-family="Inter" font-size="11.00" fill="#18181b">ORC output</ns0:text>
+<ns0:text text-anchor="middle" x="543" y="-185.2" font-family="Inter" font-size="11.00" fill="#18181b">File-size control (1–6 blocks)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>p1-&gt;m1</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M425.22,-206C434.33,-206 443.55,-206 452.6,-206" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="452.85,-208.8 460.85,-206 452.85,-203.2 452.85,-208.8" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>st1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M798,-228C798,-228 673,-228 673,-228 667,-228 661,-222 661,-216 661,-216 661,-196 661,-196 661,-190 667,-184 673,-184 673,-184 798,-184 798,-184 804,-184 810,-190 810,-196 810,-196 810,-216 810,-216 810,-222 804,-228 798,-228" />
+<ns0:text text-anchor="middle" x="735.5" y="-215.2" font-family="Inter" font-size="11.00" fill="#18181b">Storage (HDFS)</ns0:text>
+<ns0:text text-anchor="middle" x="735.5" y="-203.2" font-family="Inter" font-size="11.00" fill="#18181b">Normalized ORC file sizes</ns0:text>
+<ns0:text text-anchor="middle" x="735.5" y="-191.2" font-family="Inter" font-size="11.00" fill="#18181b">Optimized partition dirs</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>m1-&gt;st1</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M625.07,-206C634.23,-206 643.57,-206 652.75,-206" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="652.75,-208.8 660.75,-206 652.75,-203.2 652.75,-208.8" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>rt</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M172,-207C172,-207 39,-207 39,-207 33,-207 27,-201 27,-195 27,-195 27,-163 27,-163 27,-157 33,-151 39,-151 39,-151 172,-151 172,-151 178,-151 184,-157 184,-163 184,-163 184,-195 184,-195 184,-201 178,-207 172,-207" />
+<ns0:text text-anchor="middle" x="105.5" y="-194.2" font-family="Inter" font-size="11.00" fill="#18181b">Runtime tuning</ns0:text>
+<ns0:text text-anchor="middle" x="105.5" y="-182.2" font-family="Inter" font-size="11.00" fill="#18181b">executor sizing,</ns0:text>
+<ns0:text text-anchor="middle" x="105.5" y="-170.2" font-family="Inter" font-size="11.00" fill="#18181b">shuffle partition calibration,</ns0:text>
+<ns0:text text-anchor="middle" x="105.5" y="-158.2" font-family="Inter" font-size="11.00" fill="#18181b">broadcast join checks</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>rt-&gt;p1</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" stroke-dasharray="5,2" d="M184.24,-188.52C196.66,-190.04 209.69,-191.64 222.61,-193.22" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="222.36,-196.01 230.64,-194.2 223.04,-190.45 222.36,-196.01" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="1251pt" height="461pt" viewBox="0.00 0.00 1251.00 461.41">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 457.41)">
+<ns0:title>G</ns0:title>
+<ns0:text text-anchor="middle" x="199" y="-439.81" font-family="Inter" font-size="12.00">Enterprise Hadoop Modernization — HDP 2.x → CDP (2022–2024)</ns0:text>
+<ns0:g id="clust1" class="cluster">
+<ns0:title>cluster_legacy</ns0:title>
+<ns0:path fill="#eff6ff" stroke="#93c5fd" d="M20,-120C20,-120 553,-120 553,-120 559,-120 565,-126 565,-132 565,-132 565,-343 565,-343 565,-349 559,-355 553,-355 553,-355 20,-355 20,-355 14,-355 8,-349 8,-343 8,-343 8,-132 8,-132 8,-126 14,-120 20,-120" fill-opacity="0.55" stroke-width="1.2" />
+<ns0:text text-anchor="middle" x="66.5" y="-341.4" font-family="Inter" font-size="12.00">Legacy (HDP 2.x)</ns0:text>
+</ns0:g>
+<ns0:g id="clust2" class="cluster">
+<ns0:title>cluster_target</ns0:title>
+<ns0:path fill="#eff6ff" stroke="#93c5fd" d="M771,-8C771,-8 1223,-8 1223,-8 1229,-8 1235,-14 1235,-20 1235,-20 1235,-393 1235,-393 1235,-399 1229,-405 1223,-405 1223,-405 771,-405 771,-405 765,-405 759,-399 759,-393 759,-393 759,-20 759,-20 759,-14 765,-8 771,-8" fill-opacity="0.55" stroke-width="1.2" />
+<ns0:text text-anchor="middle" x="845.5" y="-391.4" font-family="Inter" font-size="12.00">Target (CDP post-upgrade)</ns0:text>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>l1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M174,-326C174,-326 28,-326 28,-326 22,-326 16,-320 16,-314 16,-314 16,-302 16,-302 16,-296 22,-290 28,-290 28,-290 174,-290 174,-290 180,-290 186,-296 186,-302 186,-302 186,-314 186,-314 186,-320 180,-326 174,-326" />
+<ns0:text text-anchor="middle" x="101" y="-311.2" font-family="Inter" font-size="11.00" fill="#18181b">HDFS</ns0:text>
+<ns0:text text-anchor="middle" x="101" y="-299.2" font-family="Inter" font-size="11.00" fill="#18181b">(unmanaged warehouse dirs)</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>l2</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M372,-272C372,-272 234,-272 234,-272 228,-272 222,-266 222,-260 222,-260 222,-248 222,-248 222,-242 228,-236 234,-236 234,-236 372,-236 372,-236 378,-236 384,-242 384,-248 384,-248 384,-260 384,-260 384,-266 378,-272 372,-272" />
+<ns0:text text-anchor="middle" x="303" y="-257.2" font-family="Inter" font-size="11.00" fill="#18181b">Hive 1/2</ns0:text>
+<ns0:text text-anchor="middle" x="303" y="-245.2" font-family="Inter" font-size="11.00" fill="#18181b">(non-ACID managed tables)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>l1-&gt;l2</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M168.88,-289.94C187.64,-284.88 208.16,-279.34 227.34,-274.16" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="228.19,-276.83 235.19,-272.04 226.73,-271.42 228.19,-276.83" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>l3</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M545,-310C545,-310 432,-310 432,-310 426,-310 420,-304 420,-298 420,-298 420,-286 420,-286 420,-280 426,-274 432,-274 432,-274 545,-274 545,-274 551,-274 557,-280 557,-286 557,-286 557,-298 557,-298 557,-304 551,-310 545,-310" />
+<ns0:text text-anchor="middle" x="488.5" y="-295.2" font-family="Inter" font-size="11.00" fill="#18181b">Spark 2.x</ns0:text>
+<ns0:text text-anchor="middle" x="488.5" y="-283.2" font-family="Inter" font-size="11.00" fill="#18181b">(reading managed dirs)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>l2-&gt;l3</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M384.22,-270.61C393.39,-272.51 402.72,-274.44 411.84,-276.33" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="411.38,-279.1 419.78,-277.98 412.51,-273.61 411.38,-279.1" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>rem</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M719,-261C719,-261 605,-261 605,-261 599,-261 593,-255 593,-249 593,-249 593,-205 593,-205 593,-199 599,-193 605,-193 605,-193 719,-193 719,-193 725,-193 731,-199 731,-205 731,-205 731,-249 731,-249 731,-255 725,-261 719,-261" />
+<ns0:text text-anchor="middle" x="662" y="-248.2" font-family="Inter" font-size="11.00" fill="#18181b">Remediation + upgrade</ns0:text>
+<ns0:text text-anchor="middle" x="662" y="-236.2" font-family="Inter" font-size="11.00" fill="#18181b">(HMS/HDFS cleanup,</ns0:text>
+<ns0:text text-anchor="middle" x="662" y="-224.2" font-family="Inter" font-size="11.00" fill="#18181b">SQL refactors,</ns0:text>
+<ns0:text text-anchor="middle" x="662" y="-212.2" font-family="Inter" font-size="11.00" fill="#18181b">service upgrades,</ns0:text>
+<ns0:text text-anchor="middle" x="662" y="-200.2" font-family="Inter" font-size="11.00" fill="#18181b">validation)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>l2-&gt;rem</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M384.12,-247.94C444.1,-243.4 525.64,-237.24 584.68,-232.77" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="585.09,-235.55 592.86,-232.15 584.67,-229.96 585.09,-235.55" />
+</ns0:g>
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>l3-&gt;rem</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M537.27,-273.89C552.23,-268.23 569.11,-261.83 585.49,-255.62" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="586.49,-258.24 592.98,-252.78 584.5,-253 586.49,-258.24" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>l4</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M365,-326C365,-326 241,-326 241,-326 235,-326 229,-320 229,-314 229,-314 229,-302 229,-302 229,-296 235,-290 241,-290 241,-290 365,-290 365,-290 371,-290 377,-296 377,-302 377,-302 377,-314 377,-314 377,-320 371,-326 365,-326" />
+<ns0:text text-anchor="middle" x="303" y="-311.2" font-family="Inter" font-size="11.00" fill="#18181b">Oozie workflows</ns0:text>
+<ns0:text text-anchor="middle" x="303" y="-299.2" font-family="Inter" font-size="11.00" fill="#18181b">(cluster-coupled configs)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>l4-&gt;l3</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M377.05,-301.63C388.39,-300.64 400.13,-299.62 411.53,-298.62" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="412.04,-301.39 419.76,-297.91 411.55,-295.81 412.04,-301.39" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>l5</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M138,-272C138,-272 64,-272 64,-272 58,-272 52,-266 52,-260 52,-260 52,-248 52,-248 52,-242 58,-236 64,-236 64,-236 138,-236 138,-236 144,-236 150,-242 150,-248 150,-248 150,-260 150,-260 150,-266 144,-272 138,-272" />
+<ns0:text text-anchor="middle" x="101" y="-257.2" font-family="Inter" font-size="11.00" fill="#18181b">Ranger/Sentry</ns0:text>
+<ns0:text text-anchor="middle" x="101" y="-245.2" font-family="Inter" font-size="11.00" fill="#18181b">inconsistencies</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>l5-&gt;rem</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M150.05,-240.63C171.83,-235.24 198.02,-229.66 222,-227 348.53,-212.94 496.84,-217.23 584.64,-221.91" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="584.54,-224.71 592.68,-222.35 584.85,-219.11 584.54,-224.71" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>l6</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M139,-218C139,-218 63,-218 63,-218 57,-218 51,-212 51,-206 51,-206 51,-194 51,-194 51,-188 57,-182 63,-182 63,-182 139,-182 139,-182 145,-182 151,-188 151,-194 151,-194 151,-206 151,-206 151,-212 145,-218 139,-218" />
+<ns0:text text-anchor="middle" x="101" y="-197.2" font-family="Inter" font-size="11.00" fill="#18181b">Limited / no TLS</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>l6-&gt;rem</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M151.1,-193.68C236.11,-184 415.94,-169.09 565,-194 571.56,-195.1 578.27,-196.59 584.95,-198.33" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="584.3,-201.06 592.76,-200.48 585.79,-195.66 584.3,-201.06" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>l7</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M138,-164C138,-164 64,-164 64,-164 58,-164 52,-158 52,-152 52,-152 52,-140 52,-140 52,-134 58,-128 64,-128 64,-128 138,-128 138,-128 144,-128 150,-134 150,-140 150,-140 150,-152 150,-152 150,-158 144,-164 138,-164" />
+<ns0:text text-anchor="middle" x="101" y="-143.2" font-family="Inter" font-size="11.00" fill="#18181b">Hive CLI scripts</ns0:text>
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>c3</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M1058,-376C1058,-376 967,-376 967,-376 961,-376 955,-370 955,-364 955,-364 955,-352 955,-352 955,-346 961,-340 967,-340 967,-340 1058,-340 1058,-340 1064,-340 1070,-346 1070,-352 1070,-352 1070,-364 1070,-364 1070,-370 1064,-376 1058,-376" />
+<ns0:text text-anchor="middle" x="1012.5" y="-355.2" font-family="Inter" font-size="11.00" fill="#18181b">Hive 3 / LLAP / Tez</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>rem-&gt;c3</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M669.65,-261.16C680.16,-304.76 705.23,-378.41 759,-411 819.81,-447.86 850.28,-429.29 919,-411 941.22,-405.08 963.66,-392.43 980.88,-380.96" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="982.89,-382.98 987.92,-376.15 979.73,-378.35 982.89,-382.98" />
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>c5</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M1048,-322C1048,-322 977,-322 977,-322 971,-322 965,-316 965,-310 965,-310 965,-298 965,-298 965,-292 971,-286 977,-286 977,-286 1048,-286 1048,-286 1054,-286 1060,-292 1060,-298 1060,-298 1060,-310 1060,-310 1060,-316 1054,-322 1048,-322" />
+<ns0:text text-anchor="middle" x="1012.5" y="-307.2" font-family="Inter" font-size="11.00" fill="#18181b">Spark 3 + HWC</ns0:text>
+<ns0:text text-anchor="middle" x="1012.5" y="-295.2" font-family="Inter" font-size="11.00" fill="#18181b">(ACID-safe)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>rem-&gt;c5</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M672.69,-261.14C685.5,-299.14 712.14,-358.64 759,-385 820.98,-419.86 856.3,-418.55 919,-385 944.43,-371.39 933.21,-349.9 955,-331 956.77,-329.46 958.64,-328 960.59,-326.59" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="962.3,-328.82 967.44,-322.08 959.22,-324.14 962.3,-328.82" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>c7</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M881.5,-214C881.5,-214 804.5,-214 804.5,-214 798.5,-214 792.5,-208 792.5,-202 792.5,-202 792.5,-190 792.5,-190 792.5,-184 798.5,-178 804.5,-178 804.5,-178 881.5,-178 881.5,-178 887.5,-178 893.5,-184 893.5,-190 893.5,-190 893.5,-202 893.5,-202 893.5,-208 887.5,-214 881.5,-214" />
+<ns0:text text-anchor="middle" x="843" y="-193.2" font-family="Inter" font-size="11.00" fill="#18181b">TLS everywhere</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>rem-&gt;c7</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M731.18,-215.19C748.67,-212.16 767.32,-208.93 784.23,-206.01" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="784.97,-208.72 792.37,-204.59 784.01,-203.2 784.97,-208.72" />
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>c8</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M893.5,-160C893.5,-160 792.5,-160 792.5,-160 786.5,-160 780.5,-154 780.5,-148 780.5,-148 780.5,-136 780.5,-136 780.5,-130 786.5,-124 792.5,-124 792.5,-124 893.5,-124 893.5,-124 899.5,-124 905.5,-130 905.5,-136 905.5,-136 905.5,-148 905.5,-148 905.5,-154 899.5,-160 893.5,-160" />
+<ns0:text text-anchor="middle" x="843" y="-139.2" font-family="Inter" font-size="11.00" fill="#18181b">Ranger unified authZ</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>rem-&gt;c8</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M714.63,-192.85C728.68,-184.39 744.13,-175.8 759,-169 763.61,-166.89 768.44,-164.87 773.34,-162.95" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="774.59,-165.47 781.09,-160.03 772.62,-160.23 774.59,-165.47" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>c1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M881,-376C881,-376 805,-376 805,-376 799,-376 793,-370 793,-364 793,-364 793,-352 793,-352 793,-346 799,-340 805,-340 805,-340 881,-340 881,-340 887,-340 893,-346 893,-352 893,-352 893,-364 893,-364 893,-370 887,-376 881,-376" />
+<ns0:text text-anchor="middle" x="843" y="-361.2" font-family="Inter" font-size="11.00" fill="#18181b">HDFS HA</ns0:text>
+<ns0:text text-anchor="middle" x="843" y="-349.2" font-family="Inter" font-size="11.00" fill="#18181b">+ JournalNodes</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>c1-&gt;c3</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M893.35,-358C910.09,-358 929.04,-358 946.79,-358" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="946.85,-360.8 954.85,-358 946.85,-355.2 946.85,-360.8" />
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>c2</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M895,-322C895,-322 791,-322 791,-322 785,-322 779,-316 779,-310 779,-310 779,-298 779,-298 779,-292 785,-286 791,-286 791,-286 895,-286 895,-286 901,-286 907,-292 907,-298 907,-298 907,-310 907,-310 907,-316 901,-322 895,-322" />
+<ns0:text text-anchor="middle" x="843" y="-307.2" font-family="Inter" font-size="11.00" fill="#18181b">YARN HA</ns0:text>
+<ns0:text text-anchor="middle" x="843" y="-295.2" font-family="Inter" font-size="11.00" fill="#18181b">+ standardized sizing</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>c2-&gt;c5</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M907.32,-304C923.58,-304 940.92,-304 956.7,-304" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="956.8,-306.8 964.8,-304 956.8,-301.2 956.8,-306.8" />
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>c4</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M1215,-376C1215,-376 1118,-376 1118,-376 1112,-376 1106,-370 1106,-364 1106,-364 1106,-352 1106,-352 1106,-346 1112,-340 1118,-340 1118,-340 1215,-340 1215,-340 1221,-340 1227,-346 1227,-352 1227,-352 1227,-364 1227,-364 1227,-370 1221,-376 1215,-376" />
+<ns0:text text-anchor="middle" x="1166.5" y="-361.2" font-family="Inter" font-size="11.00" fill="#18181b">Warehouse split</ns0:text>
+<ns0:text text-anchor="middle" x="1166.5" y="-349.2" font-family="Inter" font-size="11.00" fill="#18181b">Managed + External</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>c3-&gt;c4</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M1070.1,-358C1079.11,-358 1088.51,-358 1097.74,-358" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="1097.8,-360.8 1105.8,-358 1097.8,-355.2 1097.8,-360.8" />
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>c6</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M901,-268C901,-268 785,-268 785,-268 779,-268 773,-262 773,-256 773,-256 773,-244 773,-244 773,-238 779,-232 785,-232 785,-232 901,-232 901,-232 907,-232 913,-238 913,-244 913,-244 913,-256 913,-256 913,-262 907,-268 901,-268" />
+<ns0:text text-anchor="middle" x="843" y="-247.2" font-family="Inter" font-size="11.00" fill="#18181b">Knox perimeter security</ns0:text>
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>c9</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M883,-106C883,-106 803,-106 803,-106 797,-106 791,-100 791,-94 791,-94 791,-82 791,-82 791,-76 797,-70 803,-70 803,-70 883,-70 883,-70 889,-70 895,-76 895,-82 895,-82 895,-94 895,-94 895,-100 889,-106 883,-106" />
+<ns0:text text-anchor="middle" x="843" y="-91.2" font-family="Inter" font-size="11.00" fill="#18181b">Atlas metadata</ns0:text>
+<ns0:text text-anchor="middle" x="843" y="-79.2" font-family="Inter" font-size="11.00" fill="#18181b">(where required)</ns0:text>
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>c10</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M907,-52C907,-52 779,-52 779,-52 773,-52 767,-46 767,-40 767,-40 767,-28 767,-28 767,-22 773,-16 779,-16 779,-16 907,-16 907,-16 913,-16 919,-22 919,-28 919,-28 919,-40 919,-40 919,-46 913,-52 907,-52" />
+<ns0:text text-anchor="middle" x="843" y="-31.2" font-family="Inter" font-size="11.00" fill="#18181b">Kerberos + AD integration</ns0:text>
+</ns0:g>
+</ns0:g>
+</ns0:svg>

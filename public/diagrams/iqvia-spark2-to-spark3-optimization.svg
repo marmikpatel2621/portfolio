@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="706pt" height="297pt" viewBox="0.00 0.00 706.00 297.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 293)">
+<ns0:title>G</ns0:title>
+<ns0:text text-anchor="middle" x="169" y="-275.4" font-family="Inter" font-size="12.00">IQVIA — Spark Modernization Architecture (2024–2025)</ns0:text>
+<ns0:g id="clust1" class="cluster">
+<ns0:title>cluster_pre</ns0:title>
+<ns0:path fill="#eff6ff" stroke="#93c5fd" d="M20,-8C20,-8 445,-8 445,-8 451,-8 457,-14 457,-20 457,-20 457,-69 457,-69 457,-75 451,-81 445,-81 445,-81 20,-81 20,-81 14,-81 8,-75 8,-69 8,-69 8,-20 8,-20 8,-14 14,-8 20,-8" fill-opacity="0.55" stroke-width="1.2" />
+<ns0:text text-anchor="middle" x="55.5" y="-67.4" font-family="Inter" font-size="12.00">Pre-migration</ns0:text>
+</ns0:g>
+<ns0:g id="clust2" class="cluster">
+<ns0:title>cluster_target</ns0:title>
+<ns0:path fill="#eff6ff" stroke="#93c5fd" d="M20,-179C20,-179 678,-179 678,-179 684,-179 690,-185 690,-191 690,-191 690,-248 690,-248 690,-254 684,-260 678,-260 678,-260 20,-260 20,-260 14,-260 8,-254 8,-248 8,-248 8,-191 8,-191 8,-185 14,-179 20,-179" fill-opacity="0.55" stroke-width="1.2" />
+<ns0:text text-anchor="middle" x="81" y="-246.4" font-family="Inter" font-size="12.00">Target (Spark3-based)</ns0:text>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>p1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M58,-52C58,-52 28,-52 28,-52 22,-52 16,-46 16,-40 16,-40 16,-28 16,-28 16,-22 22,-16 28,-16 28,-16 58,-16 58,-16 64,-16 70,-22 70,-28 70,-28 70,-40 70,-40 70,-46 64,-52 58,-52" />
+<ns0:text text-anchor="middle" x="43" y="-31.2" font-family="Inter" font-size="11.00" fill="#18181b">Oozie</ns0:text>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>p2</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M204,-52C204,-52 172,-52 172,-52 166,-52 160,-46 160,-40 160,-40 160,-28 160,-28 160,-22 166,-16 172,-16 172,-16 204,-16 204,-16 210,-16 216,-22 216,-28 216,-28 216,-40 216,-40 216,-46 210,-52 204,-52" />
+<ns0:text text-anchor="middle" x="188" y="-31.2" font-family="Inter" font-size="11.00" fill="#18181b">Spark 2</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>p1-&gt;p2</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M70.23,-34C93.12,-34 126.53,-34 151.75,-34" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="151.97,-36.8 159.97,-34 151.97,-31.2 151.97,-36.8" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>p3</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M437,-52C437,-52 381,-52 381,-52 375,-52 369,-46 369,-40 369,-40 369,-28 369,-28 369,-22 375,-16 381,-16 381,-16 437,-16 437,-16 443,-16 449,-22 449,-28 449,-28 449,-40 449,-40 449,-46 443,-52 437,-52" />
+<ns0:text text-anchor="middle" x="409" y="-31.2" font-family="Inter" font-size="11.00" fill="#18181b">Hive / HDFS</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>p2-&gt;p3</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M216.29,-34C252.38,-34 316.54,-34 360.62,-34" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="360.88,-36.8 368.88,-34 360.88,-31.2 360.88,-36.8" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>t1</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M58,-225C58,-225 28,-225 28,-225 22,-225 16,-219 16,-213 16,-213 16,-201 16,-201 16,-195 22,-189 28,-189 28,-189 58,-189 58,-189 64,-189 70,-195 70,-201 70,-201 70,-213 70,-213 70,-219 64,-225 58,-225" />
+<ns0:text text-anchor="middle" x="43" y="-204.2" font-family="Inter" font-size="11.00" fill="#18181b">Oozie</ns0:text>
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>t2</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M258,-225C258,-225 118,-225 118,-225 112,-225 106,-219 106,-213 106,-213 106,-201 106,-201 106,-195 112,-189 118,-189 118,-189 258,-189 258,-189 264,-189 270,-195 270,-201 270,-201 270,-213 270,-213 270,-219 264,-225 258,-225" />
+<ns0:text text-anchor="middle" x="188" y="-210.2" font-family="Inter" font-size="11.00" fill="#18181b">Spark 3</ns0:text>
+<ns0:text text-anchor="middle" x="188" y="-198.2" font-family="Inter" font-size="11.00" fill="#18181b">(AQE + CBO + modern APIs)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>t1-&gt;t2</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M70.23,-207C78.37,-207 87.85,-207 97.81,-207" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="97.89,-209.8 105.89,-207 97.89,-204.2 97.89,-209.8" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>t3</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M468.5,-231C468.5,-231 349.5,-231 349.5,-231 343.5,-231 337.5,-225 337.5,-219 337.5,-219 337.5,-199 337.5,-199 337.5,-193 343.5,-187 349.5,-187 349.5,-187 468.5,-187 468.5,-187 474.5,-187 480.5,-193 480.5,-199 480.5,-199 480.5,-219 480.5,-219 480.5,-225 474.5,-231 468.5,-231" />
+<ns0:text text-anchor="middle" x="409" y="-218.2" font-family="Inter" font-size="11.00" fill="#18181b">Hive 3 tables</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-206.2" font-family="Inter" font-size="11.00" fill="#18181b">(balanced, block-aligned</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-194.2" font-family="Inter" font-size="11.00" fill="#18181b">partitioning)</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>t2-&gt;t3</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M270.24,-207.74C289.52,-207.92 310.05,-208.11 329.22,-208.28" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="329.31,-211.08 337.34,-208.35 329.37,-205.48 329.31,-211.08" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>note</ns0:title>
+<ns0:polygon fill="none" stroke="#e4e4e7" stroke-width="1.2" points="506,-169 306,-169 306,-89 512,-89 512,-163 506,-169" />
+<ns0:polyline fill="none" stroke="#e4e4e7" stroke-width="1.2" points="506,-169 506,-163 " />
+<ns0:polyline fill="none" stroke="#e4e4e7" stroke-width="1.2" points="512,-163 506,-163 " />
+<ns0:text text-anchor="middle" x="409" y="-156.2" font-family="Inter" font-size="11.00" fill="#18181b">Principles</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-144.2" font-family="Inter" font-size="11.00" fill="#18181b">• Minimize shuffles</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-132.2" font-family="Inter" font-size="11.00" fill="#18181b">• Maximize pruning</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-120.2" font-family="Inter" font-size="11.00" fill="#18181b">• Control output file sizes</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-108.2" font-family="Inter" font-size="11.00" fill="#18181b">• Enable runtime dynamism (AQE)</ns0:text>
+<ns0:text text-anchor="middle" x="409" y="-96.2" font-family="Inter" font-size="11.00" fill="#18181b">• Standardize patterns across teams</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>t2-&gt;note</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" stroke-dasharray="5,2" d="M239.79,-188.91C259.51,-181.89 282.82,-173.58 305.71,-165.43" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>t4</ns0:title>
+<ns0:path fill="none" stroke="#d4d4d8" stroke-width="1.2" d="M670,-227C670,-227 560,-227 560,-227 554,-227 548,-221 548,-215 548,-215 548,-203 548,-203 548,-197 554,-191 560,-191 560,-191 670,-191 670,-191 676,-191 682,-197 682,-203 682,-203 682,-215 682,-215 682,-221 676,-227 670,-227" />
+<ns0:text text-anchor="middle" x="615" y="-212.2" font-family="Inter" font-size="11.00" fill="#18181b">Downstream reporting</ns0:text>
+<ns0:text text-anchor="middle" x="615" y="-200.2" font-family="Inter" font-size="11.00" fill="#18181b">&amp; enrichment systems</ns0:text>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>t3-&gt;t4</ns0:title>
+<ns0:path fill="none" stroke="#2563eb" stroke-width="1.35" d="M480.78,-209C499.81,-209 520.44,-209 539.66,-209" />
+<ns0:polygon fill="#2563eb" stroke="#2563eb" stroke-width="1.35" points="539.8,-211.8 547.8,-209 539.8,-206.2 539.8,-211.8" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>
