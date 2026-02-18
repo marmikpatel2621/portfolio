@@ -3,632 +3,1007 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marmik Patel | Senior Data Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Marmik Patel | Senior Solutions Architect</title>
+  <meta name="description" content="Marmik Patel — Senior Solutions Architect. Data platform modernization, Snowflake + Spark performance engineering, and large-scale migrations."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --clr-bg: #f3f4f6;
-      --clr-primary: #2563eb;
-      --clr-primary-dark: #1d4ed8;
-      --clr-dark: #1f2937;
-      --clr-light: #ffffff;
-      --fade-duration: 0.6s;
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.09);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --muted2: rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.12);
+      --accent: #7c3aed;     /* violet */
+      --accent2: #22c55e;    /* green */
+      --accent3: #06b6d4;    /* cyan */
+      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --focus: 0 0 0 3px rgba(124,58,237,0.35);
     }
-    * { box-sizing: border-box; margin:0; padding:0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--clr-bg);
-      color: var(--clr-dark);
-      line-height:1.6;
-    }
-    a { color: inherit; text-decoration: none; }
 
-    /* HEADER */
-    header {
-      background: var(--clr-dark);
-      color: var(--clr-light);
-      padding: 3rem 1rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 700px at 18% 12%, rgba(124,58,237,0.25), transparent 55%),
+        radial-gradient(900px 650px at 85% 20%, rgba(6,182,212,0.18), transparent 55%),
+        radial-gradient(1100px 800px at 55% 95%, rgba(34,197,94,0.12), transparent 60%),
+        linear-gradient(180deg, #070a14 0%, var(--bg) 25%, #070a14 100%);
+      line-height: 1.55;
     }
-    header::before {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent);
-      animation: rotateBg 20s linear infinite;
-    }
-    @keyframes rotateBg { to { transform: rotate(360deg); } }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      opacity:0; transform: translateY(20px);
-      animation: fadeIn var(--fade-duration) forwards 0.3s;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity:0; transform: translateY(20px);
-      animation: fadeIn var(--fade-duration) forwards 0.5s;
-    }
-    .btn-resume {
-      display:inline-block;
-      margin-top:1.2rem;
-      padding:.6rem 1.4rem;
-      background: var(--clr-primary);
-      color: var(--clr-light);
-      border-radius:6px;
-      font-weight:600;
-      transform: translateY(20px);
-      opacity:0;
-      animation: fadeIn var(--fade-duration) forwards 0.7s;
-    }
-    .btn-resume:hover { background: var(--clr-primary-dark); }
 
-    /* NAV */
-    nav {
+    a{ color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible, summary:focus-visible{
+      outline:none;
+      box-shadow: var(--focus);
+      border-radius: 10px;
+    }
+
+    /* Layout */
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .grid{ display:grid; gap: 18px; }
+
+    /* Top bar */
+    .topbar{
       position: sticky;
       top:0;
-      background: var(--clr-light);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      z-index:100;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(6,10,20,0.65);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .nav-container {
-      max-width:1100px;
-      margin:auto;
+    .topbar-inner{
       display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 0;
+      gap: 16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 12px;
+      min-width: 220px;
+    }
+    .mark{
+      width: 36px; height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.95), rgba(6,182,212,0.85));
+      box-shadow: 0 10px 30px rgba(124,58,237,0.25);
+    }
+    .brand .name{
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 14px;
+    }
+    .brand .role{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 2px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: all .2s ease;
+    }
+    .nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.10);
+    }
+    .nav a.active{
+      color: var(--text);
+      background: rgba(124,58,237,0.16);
+      border-color: rgba(124,58,237,0.28);
+    }
+
+    .cta{
+      display:flex; gap: 10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
       justify-content:center;
-      gap:2rem;
-      padding:.75rem 1rem;
+      gap: 8px;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      white-space: nowrap;
     }
-    nav a {
-      color: var(--clr-dark);
-      font-weight:500;
-      position: relative;
-      padding-bottom:2px;
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); }
+    .btn.primary{
+      border-color: rgba(124,58,237,0.34);
+      background: linear-gradient(135deg, rgba(124,58,237,0.85), rgba(6,182,212,0.35));
     }
-    nav a::after {
-      content:'';
-      position:absolute; left:0; bottom:0;
-      width:100%; height:2px;
-      background:var(--clr-primary);
-      transform: scaleX(0);
-      transform-origin:right;
-      transition: transform .3s ease;
-    }
-    nav a:hover::after,
-    nav a.active::after { transform: scaleX(1); transform-origin:left; }
+    .btn.primary:hover{ border-color: rgba(124,58,237,0.55); }
 
-    /* SECTIONS */
-    .container { max-width:1100px; margin:2rem auto; padding:0 1rem; }
-    section { margin-bottom:4rem; opacity:0; transform:translateY(30px); 
-              animation: fadeIn var(--fade-duration) forwards; }
-    section:nth-of-type(odd)  { animation-delay: 0.3s; }
-    section:nth-of-type(even) { animation-delay: 0.5s; }
-
-    h2 {
-      font-size:2rem;
-      margin-bottom:1rem;
+    /* Hero */
+    header.hero{
+      padding: 56px 0 26px;
+    }
+    .hero-card{
+      border-radius: var(--radius2);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+      overflow:hidden;
       position: relative;
     }
-    h2::after {
-      content:'';
-      position:absolute; left:0; bottom:-6px;
-      width:60px; height:4px;
-      background:var(--clr-primary);
+    .hero-card::before{
+      content:"";
+      position:absolute; inset: -1px;
+      background:
+        radial-gradient(700px 380px at 12% 18%, rgba(124,58,237,0.22), transparent 55%),
+        radial-gradient(650px 360px at 80% 18%, rgba(6,182,212,0.18), transparent 55%),
+        radial-gradient(700px 420px at 55% 110%, rgba(34,197,94,0.12), transparent 55%);
+      pointer-events:none;
     }
-
-    /* ABOUT */
-    #about ul { list-style: none; margin-top:1rem; }
-    #about li { display:flex; align-items:center; gap:.6rem; margin-bottom:.8rem; }
-
-    /* EXPERIENCE */
-    .experience-grid {
+    .hero-inner{
+      position: relative;
+      padding: 30px 24px;
       display:grid;
-      grid-template-columns:1fr;
-      gap:2rem;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 18px;
+      align-items: start;
     }
-    @media(min-width:700px) {
-      .experience-grid { grid-template-columns:1fr 1fr; }
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display:grid;
-      grid-template-columns:1fr;
-      gap:2rem;
-    }
-    @media(min-width:700px) {
-      .projects-grid { grid-template-columns:1fr 1fr; }
-    }
-    .project {
-      transition: transform .3s;
-    }
-    .project:hover { transform: translateY(-6px); }
-
-    /* SKILLS */
-    .skills { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1rem; }
-    .skills span {
-      background: var(--clr-light);
-      padding:.4rem .9rem;
-      border-radius:999px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
-      transition: transform .2s, background .2s;
-    }
-    .skills span:hover {
-      transform: scale(1.05);
-      background: var(--clr-primary);
-      color: var(--clr-light);
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
     }
 
-    /* EDUCATION & CERTS */
-    .edu-card {
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124,58,237,0.14);
+      border: 1px solid rgba(124,58,237,0.24);
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+      margin-bottom: 12px;
+    }
+    .kicker b{ color: var(--text); font-weight: 700; }
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 3.2vw, 40px);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .subtitle{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 60ch;
+    }
+    .hero-points{
       display:flex;
-      flex-direction:column;
-      background: var(--clr-light);
-      padding:1.2rem;
-      border-radius:8px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.04);
-      margin-bottom:1.5rem;
-      transition: transform .3s;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
     }
-    .edu-card:hover { transform: translateY(-4px); }
-    .edu-card h3 { margin-bottom:.4rem; }
-    .edu-card p { font-size:.9rem; color:#4b5563; }
-
-    /* RESUME */
-    .download { text-align:center; }
-    
-    /* FOOTER */
-    footer { text-align:center; padding:1.5rem; background:#e5e7eb; color:#374151; }
-
-    /* Animations */
-    @keyframes fadeIn {
-      to { opacity:1; transform:translateY(0) }
+    .pill{
+      display:inline-flex; align-items:center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius: 50%;
+      background: var(--accent3);
+      box-shadow: 0 0 0 3px rgba(6,182,212,0.15);
     }
 
-    details {
-  background: #fff;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-summary {
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 600;
-  outline: none;
-  list-style: none;
-}
-details[open] summary {
-  color: var(--clr-primary);
-}
-details ul {
-  margin-top: .5rem;
-  padding-left: 1.2rem;
-}
+    .hero-side{
+      display:grid;
+      gap: 12px;
+    }
+    .metric-card{
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .metric-card .label{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-bottom: 8px;
+    }
+    .metric-card .value{
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .metric-card .note{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-/* Accordion content wrapper */
-details .details-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  padding-left: 1.2rem; /* match UL indent */
-}
+    /* Section chrome */
+    section{
+      padding: 22px 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      margin: 10px 0 14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted2);
+      font-size: 13px;
+    }
 
-/* When open, expand */
-details[open] .details-content {
-  max-height: 500px; /* large enough to show all content */
-}
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 16px;
+    }
+    .card:hover{
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.075);
+    }
 
-/* Summary arrow */
-summary {
-  position: relative;
-  padding-right: 1.5rem;
-  list-style: none;
-}
-summary::after {
-  content: '▶';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%) rotate(0deg);
-  transition: transform 0.3s ease;
-}
-details[open] summary::after {
-  transform: translateY(-50%) rotate(90deg);
-}
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px){ .about{ grid-template-columns: 1fr; } }
 
-/* Optional: fade in content */
-details .details-content ul {
-  opacity: 0;
-  transition: opacity 0.3s ease 0.2s;
-}
-details[open] .details-content ul {
-  opacity: 1;
-}
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display:grid;
+      gap: 10px;
+    }
+    .list li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .icon{
+      flex: 0 0 auto;
+      width: 18px; height: 18px;
+      margin-top: 2px;
+      color: rgba(255,255,255,0.70);
+    }
 
-/* Skill bars */
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem 2rem;
-  margin-top: 1rem;
-}
-.skill-item {
-  position: relative;
-  padding-bottom: 1.2rem; /* space for bar */
-}
-.skill-item .name {
-  display: block;
-  background: #e5e7eb;
-  color: #374151;
-  padding: .4rem .8rem;
-  border-radius: 999px;
-  font-size: .9rem;
-  text-align: center;
-  transition: background .2s, color .2s;
-}
-.skill-item .name:hover {
-  background: #2563eb;
-  color: #fff;
-}
-.skill-item .bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 6px;
-  width: 100%;
-  background: #ddd;
-  border-radius: 3px;
-  overflow: hidden;
-}
-.skill-item .bar .fill {
-  height: 100%;
-  background: #2563eb;
-  width: 0;
-  transition: width .6s ease;
-}
-/* when listing skills, we’ll use inline style on .fill to set width */
+    /* Timeline */
+    .timeline{
+      display:grid;
+      gap: 12px;
+    }
+    .job{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .job-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 12px;
+      flex-wrap: wrap;
+    }
+    .job-title{
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .job-meta{
+      color: var(--muted2);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .job ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      display:grid;
+      gap: 8px;
+    }
+
+    /* Projects */
+    .filters{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content:flex-end;
+    }
+    .chip{
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      padding: 7px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all .15s ease;
+      user-select: none;
+    }
+    .chip:hover{ border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); color: var(--text); }
+    .chip.active{
+      border-color: rgba(124,58,237,0.35);
+      background: rgba(124,58,237,0.18);
+      color: var(--text);
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+    @media (max-width: 900px){ .projects{ grid-template-columns: 1fr; } }
+
+    .proj{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      display:grid;
+      gap: 10px;
+      min-height: 170px;
+    }
+    .proj-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+    }
+    .proj h3{
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+    }
+    .badge{
+      font-size: 11px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      white-space: nowrap;
+    }
+    .proj p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .tags{
+      display:flex; flex-wrap: wrap; gap: 8px;
+    }
+    .tag{
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      padding: 6px 8px;
+      border-radius: 999px;
+    }
+    details{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding: 14px 16px;
+      font-weight: 650;
+      font-size: 13px;
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .caret{
+      width: 18px; height: 18px; flex: 0 0 auto;
+      transform: rotate(0deg);
+      transition: transform .18s ease;
+      opacity: 0.85;
+    }
+    details[open] .caret{ transform: rotate(90deg); }
+    .detail-body{
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .detail-body ul{
+      margin: 0;
+      padding-left: 18px;
+      display:grid;
+      gap: 8px;
+    }
+
+    /* Skills */
+    .skills{
+      display:flex; flex-wrap: wrap; gap: 10px;
+    }
+    .skill{
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){ .contact{ grid-template-columns: 1fr; } }
+    .kv{
+      display:grid;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .kv b{ color: var(--text); }
+    .footer{
+      padding: 26px 0 40px;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      *{ transition: none !important; animation: none !important; }
+    }
   </style>
 </head>
-<body>
 
-  <header>
-    <h1>Marmik Patel</h1>
-    <p>Senior Data Engineer & Solution Architect</p>
-    <a href="#resume" class="btn-resume">Download Résumé</a>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <div class="name">Marmik Patel</div>
+          <div class="role">Senior Solutions Architect</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Case Studies</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="mailto:marmikpatel262@gmail.com" title="Email">Email</a>
+        <a class="btn primary" href="Marmik_Patel_Resume.pdf" download title="Download PDF resume">Download Résumé</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-inner">
+          <div>
+            <div class="kicker"><b>Senior Solutions Architect</b> · Data Platforms · Modernization</div>
+            <h1>Designing scalable data platforms and modernization programs that hold up in production.</h1>
+            <p class="subtitle">
+              8+ years across distributed systems (Hadoop/Spark), cloud analytics (Snowflake/Snowpark), and platform migrations.
+              Focused on throughput, reliability, cost, and security—without hand-wavy claims.
+            </p>
+
+            <div class="hero-points" aria-label="Key themes">
+              <span class="pill"><span class="dot" aria-hidden="true"></span> Snowflake-native pipelines (Streams/Tasks/Snowpark)</span>
+              <span class="pill"><span class="dot" aria-hidden="true" style="background:var(--accent)"></span> Spark performance + skew remediation</span>
+              <span class="pill"><span class="dot" aria-hidden="true" style="background:var(--accent2)"></span> Enterprise modernization (HDP→CDP)</span>
+            </div>
+          </div>
+
+          <!-- Metrics shown only where they are sourced from your project docs -->
+          <div class="hero-side" aria-label="Selected outcomes">
+            <div class="metric-card">
+              <div class="label">Latency reduction</div>
+              <div class="value">4 hours → &lt;30 minutes</div>
+              <div class="note">SMG real-time analytics modernization</div>
+            </div>
+            <div class="metric-card">
+              <div class="label">Throughput scale</div>
+              <div class="value">30B records/day</div>
+              <div class="note">Sprint PCMD pipeline modernization</div>
+            </div>
+            <div class="metric-card">
+              <div class="label">Multimodal AI processing</div>
+              <div class="value">10,000 creatives &lt; 30 minutes</div>
+              <div class="note">Basis creative analytics (Snowflake Cortex)</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <div class="nav-container">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#resume">Resume</a>
-    </div>
-  </nav>
-
-  <div class="container">
-
-    <!-- ABOUT -->
+  <main>
+    <!-- About -->
     <section id="about">
-      <h2>About</h2>
-      <p>I’m a results-driven Senior Data Engineer & Solution Architect with 8+ years of experience delivering scalable, high-performance data platforms for Fortune 500 enterprises across telecom, life sciences, and finance.</p>
-      <ul>
-        <li>📦 Architected platforms ingesting <strong>1.4B rows/hour</strong> with Spark & Snowflake</li>
-        <li>⚙️ Delivered <strong>1500+ ETL jobs/hour</strong> with sub-5-min SLAs</li>
-        <li>📉 Led migrations cutting query latency by <strong>80%</strong> and infra cost by <strong>30%</strong></li>
-        <li>💬 Mentor & cross-functional collaborator on product roadmap</li>
-      </ul>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>About</h2>
+            <p>Architect-first framing, but hands-on execution.</p>
+          </div>
+        </div>
+
+        <div class="about">
+          <div class="card">
+            <p style="margin:0; color:var(--muted); font-size:13px;">
+              I specialize in modernizing data platforms where performance, reliability, and governance matter.
+              My work spans Snowflake-native ingestion and enrichment platforms, Spark migration/optimization programs,
+              and enterprise Hadoop upgrades (HDP→CDP). I aim for measurable outcomes and operational simplicity.
+            </p>
+
+            <ul class="list">
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="1.5"/></svg>
+                Security-minded platform foundations (RBAC, TLS/SSL patterns, enterprise posture).
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 18V6m0 12h16M8 15V9m4 8v-5m4 6v-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Performance engineering: skew, joins, partitioning, file layouts, and cost control.
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 12h10M7 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="1.5"/></svg>
+                Migration playbooks + runbooks that teams actually adopt.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:700; letter-spacing:-0.01em;">Focus areas</div>
+            <p style="margin:8px 0 12px; color:var(--muted2); font-size:13px;">
+              The core lanes that show up across projects.
+            </p>
+            <div class="skills" aria-label="Focus areas">
+              <span class="skill">Snowflake Streams & Tasks</span>
+              <span class="skill">Snowpark Python</span>
+              <span class="skill">Spark 2→3 modernization</span>
+              <span class="skill">HDP→CDP upgrades</span>
+              <span class="skill">Distributed systems debugging</span>
+              <span class="skill">Cost + reliability engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- Experience -->
     <section id="experience">
-  <h2>Work Experience</h2>
-  <div class="container">
-    <details>
-      <summary>Senior Solution Architect — Squadron Data Inc. (Jan 2024 – Present)</summary>
-      <div class="details-content">
-        <ul>
-          <li>Lead architect for cloud-scale data-platform modernizations, delivering a Snowflake + Snowpark migration factory (1500 ETL jobs/hr) and a Spark 3 upgrade that cut cluster cost by 20%.</li>
-          <li>Built out secure Azure–Snowflake foundation (Private Link, RBAC, multi-cluster warehouses) and rolled out CI/CD + monitoring that trims release times and holds 99.8% SLA.</li>
-          <li>Mentor and code-review lead for a five-engineer team; introduced CI/CD pipelines that trim release cycles by 40%</li>
-        </ul>
-      </div>
-    </details>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Work Experience</h2>
+            <p>Company-level timeline. Project case studies below.</p>
+          </div>
+        </div>
 
-    <details>
-      <summary>Big Data Hadoop Developer — Squadron Data Inc. (Jan 2018 – Dec 2023)</summary>
-      <div class="details-content">
-        <ul>
-          <li>Designed the Hive Query Stats Spark application (Scala) to surface YARN metrics, informing capacity planning and saving clients >$200K/yr</li>
-          <li>Created the Squadron Platform Migration Tool, automating Teradata/Netezza‑to‑Hadoop/Snowflake migrations</li>
-          <li>Led HDP → CDP in-place upgrades for seven enterprise clusters (150K tables), implementing Kerberos, Ranger, TLS/SSL, and ACID adoption playbooks</li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</section>
+        <div class="timeline">
+          <div class="job">
+            <div class="job-top">
+              <div>
+                <div class="job-title">Senior Solutions Architect — Squadron Data Inc.</div>
+                <div class="job-meta">Jan 2023 – Present</div>
+              </div>
+            </div>
+            <ul>
+              <li>Led architecture and delivery for large-scale modernization programs across Snowflake, Spark, and enterprise platforms.</li>
+              <li>Designed Snowflake-native ingestion/enrichment patterns and guided implementation (Streams/Tasks/Snowpark).</li>
+              <li>Supported multi-team execution with playbooks, runbooks, reviews, and technical leadership.</li>
+            </ul>
+          </div>
 
-    <!-- PROJECTS -->
+          <div class="job">
+            <div class="job-top">
+              <div>
+                <div class="job-title">Big Data Hadoop Developer — Squadron Data Inc.</div>
+                <div class="job-meta">Jan 2018 – Dec 2022</div>
+              </div>
+            </div>
+            <ul>
+              <li>Built and optimized Spark/Hive workloads and supported enterprise Hadoop modernization initiatives.</li>
+              <li>Implemented platform patterns around security, reliability, and performance for large-scale clusters and ETL ecosystems.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; color:var(--muted2); font-size:12px;">
+          Note: Project engagements listed below (Basis, SMG, IQVIA, Sprint, Enterprise HDP→CDP) reflect client work delivered during these roles.
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects / Case Studies -->
     <section id="projects">
-  <h2>Projects</h2>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Case Studies</h2>
+            <p>Filter by domain. Expand for concrete highlights.</p>
+          </div>
+          <div class="filters" aria-label="Project filters">
+            <button class="chip active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="snowflake" type="button">Snowflake</button>
+            <button class="chip" data-filter="spark" type="button">Spark</button>
+            <button class="chip" data-filter="hadoop" type="button">Hadoop/CDP</button>
+            <button class="chip" data-filter="ai" type="button">AI / Cortex</button>
+          </div>
+        </div>
 
-  <div class="container">
-    <details>
-          <summary>Snowflake Migration Factory & Real-Time Analytics</summary>
-          <div class="details-content">
-          <ul>
-          <li>Migrated <strong>700+ databases / 4500+ tables</strong> from Hive to Snowflake with Snowpark-driven automated schema-transformation logic.</li>
-          <li>Designed Azure–Snowflake network topology: deployed Private Endpoints (PE / PEP), routed traffic through Azure Private Link and DNS forwarding rules to keep all data-in-flight off the public Internet.</li>
-          <li>Provisioned multi-cluster warehouses (XS → L) with auto-suspend / auto-resume and resource monitors; drove 20 % credit savings while meeting burst-load SLAs.</li>
-          <li>Implemented role-based access control (RBAC): created custom roles for Consumer Teams vs Platform Ops, integrated Azure AD SSO, and built user-onboarding scripts with SnowSQL + Github Actions</li>
-          <li>Configured <strong>Snowflake Tasks & Streams + Snowpipe</strong> for near-real-time ingestion; orchestrated cross-database dependencies via Airflow DAGs.</li>
-          <li>Tuned file formats & micro-partition clustering enabled the sustainment of over <strong>1500 ETL jobs/hour</strong>, while maintaining query latency below a second for more than 40 downstream teams.</li>
-          <li><strong>Impact:</strong> Pipeline execution is 3× faster, achieving 99.8% SLA compliance, and audited with zero egress to public endpoints for compliance.</li>
-        </ul>
+        <div class="projects" id="projectGrid">
+          <!-- Basis -->
+          <div class="proj" data-tags="snowflake ai">
+            <div class="proj-top">
+              <h3>Creative Analytics Platform — Basis (2025)</h3>
+              <span class="badge">AdTech · Snowflake Cortex</span>
+            </div>
+            <p>Built an AI-driven creative analytics system: ingest creatives, extract multimodal features via Cortex, join to KPIs, and expose insights in Streamlit.</p>
+            <div class="tags">
+              <span class="tag">Snowflake</span><span class="tag">Cortex</span><span class="tag">Snowpark</span><span class="tag">Airflow</span><span class="tag">Streamlit</span>
+            </div>
+
+            <details>
+              <summary>
+                Highlights
+                <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="detail-body">
+                <ul>
+                  <li>Automated ingestion + metadata extraction for images and GIFs.</li>
+                  <li>Parallel LLM-based feature extraction using Snowflake Cortex.</li>
+                  <li>Unified creative → features → KPI dataset with correlation views.</li>
+                  <li>Delivered teacher-model scoring framework for evaluation.</li>
+                  <li><b>10,000 creatives processed in &lt; 30 minutes.</b></li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <!-- SMG Snowflake migration factory -->
+          <div class="proj" data-tags="snowflake">
+            <div class="proj-top">
+              <h3>Real-Time Analytics Modernization — SMG (2025)</h3>
+              <span class="badge">CX Analytics · Migration Factory</span>
+            </div>
+            <p>Consolidated multi-hop pipelines into a unified Snowflake + Snowpark platform and reduced operational cost while enabling near real-time processing.</p>
+            <div class="tags">
+              <span class="tag">Streams/Tasks</span><span class="tag">Snowpark</span><span class="tag">Async enrichment</span><span class="tag">Kafka (ingress)</span>
+            </div>
+
+            <details>
+              <summary>
+                Highlights
+                <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="detail-body">
+                <ul>
+                  <li>Replaced Spark + Windows enrichment with a Snowpark Python engine.</li>
+                  <li>Eliminated multi-hop Kafka pipelines in favor of Streams & Tasks.</li>
+                  <li>Implemented async REST enrichment with batching, KV caching, and parallelism.</li>
+                  <li>Rebuilt Hive-compatible Survey/Social fact models inside Snowflake.</li>
+                  <li><b>Latency: 4 hours → &lt;30 minutes</b>; <b>Infra: ~$1M/year → ~$600K/year</b>.</li>
+                  <li>Built a metadata-driven migration factory supporting <b>500+ enterprise clients</b>.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <!-- IQVIA Spark -->
+          <div class="proj" data-tags="spark">
+            <div class="proj-top">
+              <h3>Spark 2 → Spark 3 Migration — IQVIA (2024–2025)</h3>
+              <span class="badge">Life Sciences · Performance Program</span>
+            </div>
+            <p>Led a modernization program across a multi-team platform, optimizing high-value pipelines and enabling broad Spark 3 adoption.</p>
+            <div class="tags">
+              <span class="tag">AQE</span><span class="tag">CBO</span><span class="tag">Skew fixes</span><span class="tag">Partition pruning</span>
+            </div>
+
+            <details>
+              <summary>
+                Highlights
+                <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="detail-body">
+                <ul>
+                  <li>Optimized 50–60 high-value Spark pipelines.</li>
+                  <li><b>3–4× speedups on average; several pipelines reached 30–50×.</b></li>
+                  <li>Enabled Spark 3 migration across <b>60% of the codebase in four months</b>.</li>
+                  <li>Improved reporting frequency from daily → <b>4× per day</b> (hourly for some jobs).</li>
+                  <li>Scale: <b>4–5 TB/day</b>; largest tables ~<b>20 TB</b>; 30+ engineering groups.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <!-- Sprint -->
+          <div class="proj" data-tags="spark hadoop">
+            <div class="proj-top">
+              <h3>ETL Optimization & Small File Reduction — Sprint (2019)</h3>
+              <span class="badge">Telecom · Throughput Modernization</span>
+            </div>
+            <p>Redesigned Hive modeling and Spark ETL patterns to remove bottlenecks and achieve multi-billion record per hour processing where it mattered.</p>
+            <div class="tags">
+              <span class="tag">Spark</span><span class="tag">Hive</span><span class="tag">ORC partitioning</span><span class="tag">Oozie</span>
+            </div>
+
+            <details>
+              <summary>
+                Highlights
+                <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="detail-body">
+                <ul>
+                  <li>Optimized pipeline ingesting <b>30B records/day</b> across Ericsson MME and Nokia LTE feeds.</li>
+                  <li>Enabled all 36 MMEs to process within SLA (&lt;45 minutes).</li>
+                  <li>Reduced joins from 15–20 to 5–6 and removed UDF-heavy logic.</li>
+                  <li>Achieved <b>&gt;45× ingestion throughput improvement</b> and <b>&lt;5-second</b> interactive query performance.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <!-- Enterprise HDP -> CDP -->
+          <div class="proj" data-tags="hadoop">
+            <div class="proj-top">
+              <h3>Enterprise Hadoop Modernization — HDP → CDP (2022–2024)</h3>
+              <span class="badge">Fortune-500 · Platform Upgrades</span>
+            </div>
+            <p>Executed in-place upgrades across large clusters and remediated breaking changes, security posture, and ACID alignment.</p>
+            <div class="tags">
+              <span class="tag">Ranger</span><span class="tag">Kerberos</span><span class="tag">TLS</span><span class="tag">Hive3</span><span class="tag">Spark3</span>
+            </div>
+
+            <details>
+              <summary>
+                Highlights
+                <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="detail-body">
+                <ul>
+                  <li>Modernized HDP 2.x clusters to CDP Private Cloud Base across <b>200–2,000 node</b> estates.</li>
+                  <li>Metadata remediation for <b>150K+ Hive tables</b> and Hive3 compatibility fixes.</li>
+                  <li>Security hardening with TLS, AD/Kerberos integration, and Ranger policy alignment.</li>
+                  <li>Automated runbooks reducing cycle time by ~<b>25%</b>.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <!-- Teradata -> Hadoop at SMG -->
+          <div class="proj" data-tags="hadoop spark">
+            <div class="proj-top">
+              <h3>Teradata → Hadoop Modernization — SMG (2018)</h3>
+              <span class="badge">Migration · LLAP Performance</span>
+            </div>
+            <p>Migrated a Teradata-backed analytics platform to Hadoop with ingestion automation, optimized Hive models, and interactive performance tuning.</p>
+            <div class="tags">
+              <span class="tag">Sqoop</span><span class="tag">Hive LLAP</span><span class="tag">Spark</span><span class="tag">HDP</span>
+            </div>
+
+            <details>
+              <summary>
+                Highlights
+                <svg class="caret" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <div class="detail-body">
+                <ul>
+                  <li>Analyzed <b>3,500+ Teradata tables</b> and <b>600+ database</b> workloads.</li>
+                  <li>Built parallel Sqoop ingestion engine (50 concurrent jobs) and completed historical migration in <b>one week</b>.</li>
+                  <li>Achieved <b>sub-second LLAP query latency</b> and stable hourly ingestion.</li>
+                  <li>Solved small-file problems using atomic single-file swap patterns.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
         </div>
-        </details>
-        <details>
-          <summary>Spark 2→3 Upgrade & Cluster Optimisation</summary>
-          <div class="details-content">
-          <ul>
-          <li><strong>Refactored 400+ Spark 2 jobs to Spark 3</strong>, exploiting Adaptive Query Execution (AQE), dynamic partition pruning, and skew-aware shuffle.</li>
-          <li><strong>Fine-tuned cluster configs:</strong> adjusted executor/core ratios, shuffle partitions, GC flags, and I/O buffer sizes; trimmed median job memory by 30 %.</li>
-          <li><strong>Curated dependency set</strong> (Spark, Hadoop, Hive, Scala libs) and removed shaded JAR conflicts, shrinking container start-up time by 20 %.</li>
-          <li>Implemented <strong>bucketed tables + predicate push-down</strong>, optimized broadcast vs. shuffle joins, and rewrote wide joins with Bloom filters.</li>
-          <li>Slashed small-file count 80% via compaction strategy and dynamic repartitioning; end-to-end runtime 1.5 – 2× faster on daily workload.</li>
-          <li>Authored a <strong>Spark 3 performance playbook</strong> with config templates and code patterns adopted by 6 peer teams.</li>
-          <li><strong>Impact:</strong> 20% reduction in Yarn-cluster CPU / memory cost while sustaining tighter SLAs for downstream analytics.</li>
-        </ul>
-        </div>
-        </details>
-        <details>
-          <summary>Enterprise HDP→CDP Modernisation</summary>
-          <div class="details-content">
-          <ul>
-          <li><strong>Assessed 2,000-node HDP estates:</strong> profiled services, Hive metastore health (150K+ tables) and security posture to choose in-place upgrade vs. side-by-side migration per cluster.</li>
-          <li>Created <strong>“code-delta” playbooks</strong> — flagged Spark/Hive syntax breaks, Sqoop/OOZIE job tweaks, and storage-path changes—so application teams could refactor before cut-over.</li>
-          <li>Authored and co-owned a <strong>modular runbook framework</strong>; generated environment-specific runbooks and automated validation scripts for DEV → UAT → PROD waves.</li>
-          <li>Implemented Ranger policies, Kerberos, Knox gateway, TLS/SSL and enabled Hive/Spark ACID tables; handed over post-go-live hardening checklist to platform ops.</li>
-        </ul>
-        </div>
-        </details>
-        <details>
-          <summary>Telecom ETL Optimisation & Small-File Reduction</summary>
-          <div class="details-content">
-          <ul>
-          <li><strong>Audited legacy Spark & Hive codebase</strong> to surface inefficient shuffle patterns, hard-coded partitions, and file-layout anti-patterns. </li>
-          <li><strong>Redesigned Hive partition scheme + file-format strategy</strong> (multiple buckets, larger ORC stripes) for Tez; eliminated small-file explosion.</li>
-          <li><strong>Re-architected Spark ingest framework</strong> to sustain 1–2 B rows/hour with checkpointing and dynamic repartitioning.</li>
-          <li><strong>Result:</strong> 10× higher ingest throughput and Hive query latency cut from 6 min to around 1 min.</li>
-        </ul>
-        </div>
-        </details>
-          <details>
-          <summary>Teradata→Hadoop Migration Framework</summary>
-          <div class="details-content">
-          <ul>
-          <li><strong>Parsed historical Teradata query logs</strong> with Spark to profile access patterns and recommend optimal HDFS layout, clustering keys, and partition strategy.</li>
-          <li>Generated Sqoop-ready table manifests and an <strong>auto-builder that emits parallel Sqoop scripts</strong> for 600+ databases / 3,500+ tables.</li>
-          <li>Produced companion module that scaffolds <strong>Spark ETL templates</strong> (read, transform, write to Hive) for each migrated table—accelerating developer onboarding and ensuring performance best practices.</li>
-        </ul>
-        </div>
-        </details>
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- Skills -->
     <section id="skills">
-  <h2>Skills &amp; Proficiency</h2>
-  <div class="skills-list">
-    <!-- Data Engineering & Big Data -->
-    <div class="skill-item">
-      <span class="name">Hadoop</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Spark 2/3</span>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Hive</span>
-      <div class="bar"><div class="fill" style="width:75%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Kafka</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Livy</span>
-      <div class="bar"><div class="fill" style="width:65%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Sqoop</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Skills</h2>
+            <p>No fake proficiency bars. Just what you use.</p>
+          </div>
+        </div>
 
-    <!-- Cloud & DevOps -->
-    <div class="skill-item">
-      <span class="name">AWS (S3, EMR)</span>
-      <div class="bar"><div class="fill" style="width:50%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Azure</span>
-      <div class="bar"><div class="fill" style="width:50%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Docker</span>
-      <div class="bar"><div class="fill" style="width:30%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">CI/CD</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Git</span>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Ranger</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Knox</span>
-      <div class="bar"><div class="fill" style="width:65%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Kerberos</span>
-      <div class="bar"><div class="fill" style="width:75%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">TLS/SSL</span>
-      <div class="bar"><div class="fill" style="width:50%"></div></div>
-    </div>
+        <div class="card">
+          <div class="skills" aria-label="Skill list">
+            <span class="skill">Snowflake</span>
+            <span class="skill">Snowpark (Python)</span>
+            <span class="skill">Streams & Tasks</span>
+            <span class="skill">Spark 2 / Spark 3</span>
+            <span class="skill">Hive (2/3)</span>
+            <span class="skill">HDFS</span>
+            <span class="skill">Kafka (ingress patterns)</span>
+            <span class="skill">Airflow</span>
+            <span class="skill">Oozie</span>
+            <span class="skill">Scala</span>
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Ranger</span>
+            <span class="skill">Kerberos</span>
+            <span class="skill">TLS/SSL</span>
+            <span class="skill">Azure (platform integration)</span>
+            <span class="skill">AWS (basics)</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Programming & Scripting -->
-    <div class="skill-item">
-      <span class="name">Python</span>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Scala</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Java</span>
-      <div class="bar"><div class="fill" style="width:60%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">SQL</span>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Bash</span>
-      <div class="bar"><div class="fill" style="width:75%"></div></div>
-    </div>
-
-    <!-- Orchestration & ETL -->
-    <div class="skill-item">
-      <span class="name">Apache Airflow</span>
-      <div class="bar"><div class="fill" style="width:55%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Snowflake Tasks</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Snowpipe</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Apache Oozie</span>
-      <div class="bar"><div class="fill" style="width:60%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">IBM DataStage</span>
-      <div class="bar"><div class="fill" style="width:25%"></div></div>
-    </div>
-
-    <!-- Databases & Warehouses -->
-    <div class="skill-item">
-      <span class="name">Snowflake</span>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">PostgreSQL</span>
-      <div class="bar"><div class="fill" style="width:65%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">MySQL</span>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Teradata</span>
-      <div class="bar"><div class="fill" style="width:65%"></div></div>
-    </div>
-
-    <!-- Analytics & BI -->
-    <div class="skill-item">
-      <span class="name">Power BI</span>
-      <div class="bar"><div class="fill" style="width:55%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Tableau</span>
-      <div class="bar"><div class="fill" style="width:55%"></div></div>
-    </div>
-
-    <!-- Tools & IDEs -->
-    <div class="skill-item">
-      <span class="name">Maven</span>
-      <div class="bar"><div class="fill" style="width:75%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">SBT</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">IntelliJ IDEA</span>
-      <div class="bar"><div class="fill" style="width:90%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">PyCharm</span>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Eclipse</span>
-      <div class="bar"><div class="fill" style="width:80%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">Unix/Linux</span>
-      <div class="bar"><div class="fill" style="width:70%"></div></div>
-    </div>
-    <div class="skill-item">
-      <span class="name">JIRA</span>
-      <div class="bar"><div class="fill" style="width:85%"></div></div>
-    </div>
-  </div>
-</section>
-
-    <!-- EDUCATION -->
+    <!-- Education -->
     <section id="education">
-      <h2>Education &amp; Certifications</h2>
-      <div class="edu-card">
-        <h3>Master of Science in Computer Science</h3>
-        <p>University of Missouri – Kansas City | GPA 3.95 | Jan 2016 – Dec 2017</p>
-      </div>
-      <div class="edu-card">
-        <h3>Bachelor of Engineering in Computer Engineering</h3>
-        <p>Gujarat Technological University – India | GPA 3.5 | May 2011 – Jun 2015</p>
-      </div>
-      <div class="edu-card">
-        <h3>Certification</h3>
-        <p>SnowPro Core Certified (Snowflake)</p>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Education & Certification</h2>
+            <p>Keep it clean and verifiable.</p>
+          </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: repeat(2, minmax(0,1fr));">
+          <div class="card">
+            <div style="font-weight:700;">Master of Science, Computer Science</div>
+            <div style="margin-top:6px; color:var(--muted); font-size:13px;">
+              University of Missouri – Kansas City · Jan 2016 – Dec 2017
+            </div>
+          </div>
+          <div class="card">
+            <div style="font-weight:700;">Bachelor of Engineering, Computer Engineering</div>
+            <div style="margin-top:6px; color:var(--muted); font-size:13px;">
+              Gujarat Technological University (India) · Aug 2011 – May 2015
+            </div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <div style="font-weight:700;">Certification</div>
+          <div style="margin-top:6px; color:var(--muted); font-size:13px;">
+            SnowPro Core Certified (Snowflake)
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section id="resume">
-      <h2>Resume &amp; Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:marmikpatel262@gmail.com">marmikpatel262@gmail.com</a></p>
-      <p><strong>Location:</strong> Spring Hill, KS</p>
-      <div class="download">
-        <a href="Marmik_Patel_Resume.pdf" download>📄 Download Résumé (PDF)</a>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Contact</h2>
+            <p>Direct and simple.</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="card">
+            <div style="font-weight:800; letter-spacing:-0.02em; font-size:16px;">Let’s talk architecture.</div>
+            <p style="margin:10px 0 0; color:var(--muted); font-size:13px;">
+              If you want someone who can design the system and also debug the ugly edge cases, email me.
+            </p>
+            <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+              <a class="btn primary" href="mailto:marmikpatel262@gmail.com">Email</a>
+              <a class="btn" href="Marmik_Patel_Resume.pdf" download>Download Résumé</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="kv">
+              <div><b>Email:</b> <a href="mailto:marmikpatel262@gmail.com">marmikpatel262@gmail.com</a></div>
+              <div><b>Location:</b> Spring Hill, KS</div>
+              <div><b>Primary focus:</b> Data platform modernization, Snowflake-native pipelines, Spark performance</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          © <span id="year"></span> Marmik Patel · All rights reserved
+        </div>
       </div>
     </section>
+  </main>
 
-  </div>
+  <script>
+    // Set year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  <footer>
-    &copy; 2025 Marmik Patel &middot; All rights reserved
-  </footer>
+    // Active nav link based on section in view
+    const navLinks = Array.from(document.querySelectorAll(".nav a"));
+    const sections = navLinks
+      .map(a => document.querySelector(a.getAttribute("href")))
+      .filter(Boolean);
 
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(a => a.classList.remove("active"));
+        const active = navLinks.find(a => a.getAttribute("href") === "#" + entry.target.id);
+        if (active) active.classList.add("active");
+      });
+    }, { root: null, threshold: 0.55 });
+
+    sections.forEach(s => obs.observe(s));
+
+    // Project filtering
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const projects = Array.from(document.querySelectorAll(".proj"));
+
+    function setFilter(tag){
+      chips.forEach(c => c.classList.toggle("active", c.dataset.filter === tag));
+      projects.forEach(p => {
+        const tags = (p.dataset.tags || "").split(/\s+/).filter(Boolean);
+        const show = tag === "all" || tags.includes(tag);
+        p.style.display = show ? "grid" : "none";
+      });
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener("click", () => setFilter(chip.dataset.filter));
+    });
+  </script>
 </body>
 </html>
