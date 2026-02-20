@@ -13,23 +13,23 @@ export const skills = {
     {
       name: 'Platform Modernization',
       items: [
+        'Enterprise-scale Hadoop (HDP/CDP) to Snowflake cloud data platform migration',
         'HDP→CDP upgrades (200–2,000 nodes)',
         'Spark2→Spark3 migrations (AQE, CBO, API refactor)',
         'Teradata→Hadoop migration',
-        'Legacy pipeline deconstruction & redesign',
-        'Security hardening (Kerberos, TLS, Ranger)',
+        'Legacy pipeline deconstruction & redesign'
       ],
     },
     {
-      name: 'Cloud & Warehouse Engineering',
-      items: [
-        'Snowflake Data Cloud',
-        'Snowpark Python',
-        'Cortex AI_COMPLETE / AI_EMBED pipelines',
-        'Streams + Tasks',
-        'Warehouse performance tuning',
-      ],
-    },
+  name: 'Cloud & Warehouse Engineering',
+  items: [
+    'Snowflake architecture & enterprise environment design',
+    'Snowpark + Cortex AI pipelines (multimodal inference, embeddings)',
+    'Cloud integration across AWS & Azure (IAM, ADLS/S3, PrivateLink, Networking)',
+    'Secure data exchange, external stages & cross-account sharing',
+    'Performance engineering, cost optimization & workload governance',
+  ],
+},
     {
       name: 'Optimization & Performance',
       items: [
@@ -54,7 +54,7 @@ export const skills = {
         'Batch + near-real-time pipelines',
         'Multimodal AI inference pipelines',
         'Metadata governance',
-        'Client consulting & pre-sales engineering',
+        'Client consulting, pre-sales & post-sales engineering',
         'Documentation, runbooks, SOP creation',
       ],
     },
