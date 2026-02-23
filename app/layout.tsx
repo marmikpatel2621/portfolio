@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
+import NextScript from 'next/script'
 import '@/styles/globals.css'
 import { Header } from '@/app/components/Header'
 import { Footer } from '@/app/components/Footer'
@@ -13,8 +13,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-          <script defer
-            strategy="afterInteractive"  src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e05ac02362d4dc9ae87ba596b06f288"}'></script>
+          <NextScript
+            strategy="afterInteractive"  src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8e05ac02362d4dc9ae87ba596b06f288"}'/>
       </head>
       <body>
         <div className="min-h-screen">
