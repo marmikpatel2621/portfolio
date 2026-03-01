@@ -6,6 +6,8 @@ import { experiences } from '@/content/experience'
 import { Section } from '@/app/components/Section'
 import { Card, CardBody, CardHeader } from '@/app/components/Card'
 import { Badge } from '@/app/components/Badge'
+import { certifications } from '@/content/certifications'
+import { CertificationCard } from '@/app/components/CertificationCard'
 
 function Metric({ label, value }:{ label: string; value: string }){
   return (
@@ -131,16 +133,13 @@ export default function Home() {
       </Section>
 
       
-      <Section id="certifications" title="Certifications">
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card>
-            <CardHeader title="SnowPro Core Certified" subtitle="Snowflake • 2024" />
-            <CardBody>
-              <p className="text-sm text-slate-700">Snowflake certification listed on resume.</p>
-            </CardBody>
-          </Card>
-        </div>
-      </Section>
+     <Section id="certifications" title="Certifications">
+      <div className="grid gap-6 md:grid-cols-2">
+        {certifications.map((cert) => (
+        <CertificationCard key={cert.id} cert={cert} />
+        ))}
+      </div>
+    </Section>
 
     <Section id="education" title="Education">
         <div className="grid gap-6 md:grid-cols-2">
